@@ -31,11 +31,6 @@ export const ChangeColorBtn = styled.div`
         cursor: pointer;
     }
 `;
-export const ChangeColorIcon = styled.img`
-    width: 20px;
-    height: 20px;
-    color: #fff;
-`;
 export const ChangeColorDiv = styled.div`
     position: fixed;
     top: 81px;
@@ -93,14 +88,33 @@ export const ColorDiv = styled.div`
 
 export const Header = styled.div`
    width: 100%;
-   height: 460px;
+   height: 455px;
    display: flex;
    flex-direction: column;
    justify-content: center;
-   background: url(${Pic1});
+   background: url(${props=>props.background});
    background-size: cover;
+   transition: 1s;
+   
+   @media(min-width: 1200px) {
+        height: 780px;
+    }
 `;
-
+export const CarouselArrow = styled.div`
+    width: 55px;
+    height: 80px;
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    opacity: ${props=>props.opacity};
+    
+    :hover {
+        cursor: pointer;
+    }
+`;
 export const HeaderTop = styled.div`
     height: 80px;
     width: 100%;
@@ -142,9 +156,13 @@ export const HeaderLink = styled.a`
 `;
 
 export const HeaderBottom = styled.div`
-    height: 380px;
+    height: 375px;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0 57px;
+    
+    @media(min-width: 1200px) {
+        height: 700px;
+    }
 `;
 export const HeaderBottomChild = styled.div`
     width: 40%;

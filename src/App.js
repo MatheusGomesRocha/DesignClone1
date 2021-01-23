@@ -1,6 +1,12 @@
 import {useState} from 'react';
 import Cog from './img/settings.png';
-import { FaCog } from 'react-icons/fa';
+import {FaCog} from 'react-icons/fa';
+import {FaAngleLeft} from 'react-icons/fa';
+import {FaAngleRight} from 'react-icons/fa';
+import Pic1 from './img/pic1.jpg';
+import Pic2 from './img/pic2.jpg';
+import AngleRight from './img/angle_right.png';
+import AngleLeft from './img/angle_left.png';
 
 import {
     Container,
@@ -10,13 +16,13 @@ import {
     ChangeColorDiv,
     ChangeColorDivTop,
     ChangeColorBtn,
-    ChangeColorIcon,
     ChangeColorDivBottom,
     ColorDiv,
     ColorDivTop,
     ColorDivBottom,
 
     Header,
+    CarouselArrow,
     HeaderTop,
     HeaderTopLeft,
     HeaderTopRight,
@@ -38,6 +44,10 @@ export default () => {
     const [leftBtn, setLeftBtn] = useState('0');
 
     const [defaultColor, setDefaultColor] = useState('#D64391');
+
+    const [headerImg, setHeaderImg] = useState(true);
+
+    const [arrowVisible, setArrowVisible] = useState('0');
 
     const DefaultBtn = withStyles(() => ({
         root: {
@@ -61,7 +71,7 @@ export default () => {
     }))(Button);
 
     const setBigColorBtn = () => {
-        if(colorBtn) {
+        if (colorBtn) {
             setColorBtn(false);
             setLeftDiv('-250px');
             setLeftBtn('0');
@@ -82,7 +92,7 @@ export default () => {
                     </ChangeColorBtn>
                 </ChangeColorDivTop>
 
-                <ChangeColorDivBottom >
+                <ChangeColorDivBottom>
                     <ColorDivTop>
                         <ColorDiv bgColor={"#495D7F"} onClick={() => setDefaultColor('#495D7F')}></ColorDiv>
                         <ColorDiv bgColor={"#D64391"} onClick={() => setDefaultColor('#D64391')}></ColorDiv>
@@ -109,7 +119,15 @@ export default () => {
 
             </ChangeColorDiv>
 
-            <Header>
+            <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')} background={headerImg ? Pic1 : Pic2}>
+                <CarouselArrow opacity={arrowVisible} style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
+                               onClick={() => setHeaderImg(!headerImg)}>
+                    <img src={AngleLeft} width={20} height={20}/>
+                </CarouselArrow>
+                <CarouselArrow opacity={arrowVisible} style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
+                               onClick={() => setHeaderImg(!headerImg)}>
+                    <img src={AngleRight} width={20} height={20}/>
+                </CarouselArrow>
                 <HeaderTop>
                     <HeaderTopLeft>
                         <HeaderLink>LOREM</HeaderLink>
