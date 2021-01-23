@@ -22,7 +22,8 @@ import {
     ColorDivBottom,
 
     Header,
-    CarouselArrow,
+    CarouselArrowLeft,
+    CarouselArrowRight,
     HeaderTop,
     HeaderTopLeft,
     HeaderTopRight,
@@ -131,15 +132,15 @@ export default () => {
 
             <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}
                     background={headerImg ? Pic1 : Pic2}>
-                <CarouselArrow opacity={arrowVisible} style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
+                <CarouselArrowLeft bgHover={defaultColor} opacity={arrowVisible} style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
                                onClick={() => setHeaderImg(!headerImg)}>
                     <img src={AngleLeft} width={20} height={20}/>
-                </CarouselArrow>
-                <CarouselArrow opacity={arrowVisible}
+                </CarouselArrowLeft>
+                <CarouselArrowRight bgHover={defaultColor} opacity={arrowVisible}
                                style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
                                onClick={() => setHeaderImg(!headerImg)}>
                     <img src={AngleRight} width={20} height={20}/>
-                </CarouselArrow>
+                </CarouselArrowRight>
                 <HeaderTop>
                     <HeaderTopLeft>
                         <HeaderLink>LOREM</HeaderLink>
@@ -155,8 +156,8 @@ export default () => {
 
                 <HeaderBottom>
                     <HeaderBottomChild>
-                        <DefaultText weight={"bold"} font={"35px"}>Strategy Planning</DefaultText>
-                        <DefaultText font={"18px"}>
+                        <DefaultText weight={"700"} font={"31px"}>Strategy Planning</DefaultText>
+                        <DefaultText color={"#ccc"} font={"17px"}>
                             Interactively procrastinate high-payoff content without backward-compatible data.
                             Quickly cultivate optimal processes and tactical architectures
                         </DefaultText>

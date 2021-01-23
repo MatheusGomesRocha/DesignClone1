@@ -6,10 +6,10 @@ export const Container = styled.div`
 `;
 
 export const DefaultText = styled.span`
-    color: #fff;
+    color: ${props=>props.color || '#fff'};
     width: 100%;
-    font-weight: ${props=>props.weight || 'normal'};
-    font-size: ${props=>props.font || '14px'};
+    font-weight: ${props => props.weight || 'normal'};
+    font-size: ${props => props.font || '14px'};
     margin-bottom: 20px;
 `;
 
@@ -75,7 +75,7 @@ export const ColorDiv = styled.div`
     height: 17px;
     border: 1px solid;
     border-radius: 3px;
-    background-color: ${props=>props.bgColor};
+    background-color: ${props => props.bgColor};
     margin: 1px;
     
     :hover {
@@ -84,15 +84,13 @@ export const ColorDiv = styled.div`
 `;
 
 
-
-
 export const Header = styled.div`
    width: 100%;
    height: 455px;
    display: flex;
    flex-direction: column;
    justify-content: center;
-   background: url(${props=>props.background});
+   background: url(${props => props.background});
    background-size: cover;
    transition: 1s;
    
@@ -100,7 +98,9 @@ export const Header = styled.div`
         height: 780px;
     }
 `;
-export const CarouselArrow = styled.div`
+
+// Contém Animação que preenche o background-color da esquerda para a direita ao realizar um hover
+export const CarouselArrowLeft = styled.div`        
     width: 55px;
     height: 80px;
     background-color: #fff;
@@ -109,11 +109,38 @@ export const CarouselArrow = styled.div`
     align-items: center;
     justify-content: center;
     transition: 0.5s;
-    opacity: ${props=>props.opacity};
+    opacity: ${props => props.opacity};
+    background: linear-gradient( to left, #fff 50%, ${props=>props.bgHover} 50% );
+    background-size: 200% 100%;
+    background-position: right bottom;
     
     :hover {
         cursor: pointer;
-    }
+        background-position: left bottom;
+        transition: 0.2s;
+     }
+`;
+
+// Contém Animação que preenche o background-color da direita para a esquerda ao realizar um hover
+export const CarouselArrowRight = styled.div`
+    width: 55px;
+    height: 80px;
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    opacity: ${props => props.opacity};
+    background: linear-gradient( to right, #fff 50%, ${props=>props.bgHover} 50% );
+    background-size: 200% 100%;
+    background-position: left bottom;
+    
+    :hover {
+        cursor: pointer;
+        background-position: right bottom;
+        transition: 0.2s;
+     }
 `;
 export const HeaderTop = styled.div`
     height: 80px;
@@ -131,6 +158,7 @@ export const HeaderTopRight = styled.div`
     padding-top: 60px;
 `;
 
+// Contém animação que inicia uma border-bottom do centro para esquerda e direita
 export const HeaderLink = styled.a`
     color: #fff;
     height: 80px;
@@ -158,7 +186,7 @@ export const HeaderLink = styled.a`
 export const HeaderBottom = styled.div`
     height: 375px;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 0 57px;
+    padding-left: 80px;
     
     @media(min-width: 1200px) {
         height: 700px;
