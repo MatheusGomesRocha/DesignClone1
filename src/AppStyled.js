@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Pic1 from './img/pic2.jpg';
 
 export const Container = styled.div`
-    font-family: arial;
+    font-family: 'Ubuntu', sans-serif;
 `;
 
 export const DefaultText = styled.span`
@@ -11,6 +11,11 @@ export const DefaultText = styled.span`
     font-weight: ${props => props.weight || 'normal'};
     font-size: ${props => props.font || '14px'};
     margin-bottom: 20px;
+    text-align: ${props=>props.align || 'left'};
+
+    @media(min-width: 1200px) {
+        font-size: ${props=>props.fontBig || '25px'};
+    }
 `;
 
 
@@ -90,11 +95,25 @@ export const Header = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;
-   background: url(${props => props.background});
-   background-size: cover;
-   transition: 1s;
+   position: relative;
    
    @media(min-width: 1200px) {
+        height: 780px;
+   }
+`;
+export const HeaderImg = styled.div`
+    width: 100%;
+    height: 455px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 2s;
+    background-size: cover;
+    background-position: center;
+    background-image: url(${props=>props.background});
+    object-fit: cover;
+    
+    @media(min-width: 1200px) {
         height: 780px;
     }
 `;
@@ -105,6 +124,7 @@ export const CarouselArrowLeft = styled.div`
     height: 80px;
     background-color: #fff;
     position: absolute;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,6 +147,7 @@ export const CarouselArrowRight = styled.div`
     height: 80px;
     background-color: #fff;
     position: absolute;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,11 +172,23 @@ export const HeaderTop = styled.div`
     align-items: center;
     border-bottom: 1px solid #999;
     background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
 `;
-export const HeaderTopLeft = styled.div``;
+export const HeaderTopLeft = styled.div`
+    display: flex;
+    padding: 60px 0 0 80px;
+    
+    @media(min-width: 1200px) {
+        padding-left: 600px;
+    }
+`;
 export const HeaderTopRight = styled.div`
     display: flex;
-    padding-top: 60px;
+    padding: 60px 80px 0 0;
+    
+    @media(min-width: 1200px) {
+        padding-right: 600px;
+    }
 `;
 
 // Contém animação que inicia uma border-bottom do centro para esquerda e direita
@@ -179,7 +212,6 @@ export const HeaderLink = styled.a`
     
     :hover:after {
         transform: scaleX(1);
-
     }
 `;
 
@@ -187,9 +219,14 @@ export const HeaderBottom = styled.div`
     height: 375px;
     background-color: rgba(0, 0, 0, 0.5);
     padding-left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: ${props=>props.content};
+    position: relative;
     
     @media(min-width: 1200px) {
         height: 700px;
+        padding-left: ${props=>props.pLeft};
     }
 `;
 export const HeaderBottomChild = styled.div`
@@ -197,6 +234,33 @@ export const HeaderBottomChild = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: ${props=>props.align || 'flex-start'};
     height: 380px;
 `;
 
+// Contém animação de fade de baixo para cima
+export const HeaderBottom1 = styled.div`
+    display: flex;
+    flex-direction: column;
+    animation: fadein 2s;
+    
+    @keyframes fadein {
+        from {opacity: 0; transform: translateY(100%);}
+        to {opacity: 1;}
+    }
+`;
+
+// Contém animação de fade de baixo para cima
+export const HeaderBottom2 = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadein 2s;
+
+    
+    @keyframes fadein {
+        from {opacity: 0; transform: translateY(100%);}
+        to {opacity: 1;}
+    }
+
+`;

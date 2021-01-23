@@ -31,6 +31,9 @@ import {
 
     HeaderBottom,
     HeaderBottomChild,
+    HeaderBottom1,
+    HeaderBottom2,
+    HeaderImg
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
@@ -54,8 +57,8 @@ export default () => {
         root: {
             backgroundColor: defaultColor,
             color: '#fff',
-            height: 40,
-            width: 120,
+            height: 50,
+            width: 130,
             borderRadius: 30,
             marginTop: 10,
             fontWeight: 'bold',
@@ -131,37 +134,57 @@ export default () => {
             </ChangeColorDiv>
 
             <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}
-                    background={headerImg ? Pic1 : Pic2}>
-                <CarouselArrowLeft bgHover={defaultColor} opacity={arrowVisible} style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
-                               onClick={() => setHeaderImg(!headerImg)}>
+                    >
+                <HeaderImg background={headerImg ? Pic1 : Pic2}></HeaderImg>
+                <CarouselArrowLeft bgHover={defaultColor} opacity={arrowVisible}
+                                   style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
+                                   onClick={() => setHeaderImg(!headerImg)}>
                     <img src={AngleLeft} width={20} height={20}/>
                 </CarouselArrowLeft>
                 <CarouselArrowRight bgHover={defaultColor} opacity={arrowVisible}
-                               style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
-                               onClick={() => setHeaderImg(!headerImg)}>
+                                    style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
+                                    onClick={() => setHeaderImg(!headerImg)}>
                     <img src={AngleRight} width={20} height={20}/>
                 </CarouselArrowRight>
                 <HeaderTop>
                     <HeaderTopLeft>
-                        <HeaderLink>LOREM</HeaderLink>
+                        <HeaderLink href={"#"} font={"25px"}>sphene</HeaderLink>
                     </HeaderTopLeft>
                     <HeaderTopRight>
-                        <HeaderLink href={"#"}>home</HeaderLink>
-                        <HeaderLink href={"#"}>PORTFOLIO</HeaderLink>
-                        <HeaderLink href={"#"}>Pages</HeaderLink>
-                        <HeaderLink href={"#"}>elements</HeaderLink>
-                        <HeaderLink href={"#"}>shop</HeaderLink>
+                        <HeaderLink font={"13px"} href={"#"}>home</HeaderLink>
+                        <HeaderLink font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
+                        <HeaderLink font={"13px"} href={"#"}>Pages</HeaderLink>
+                        <HeaderLink font={"13px"} href={"#"}>elements</HeaderLink>
+                        <HeaderLink font={"13px"} href={"#"}>shop</HeaderLink>
                     </HeaderTopRight>
                 </HeaderTop>
 
-                <HeaderBottom>
-                    <HeaderBottomChild>
-                        <DefaultText weight={"700"} font={"31px"}>Strategy Planning</DefaultText>
-                        <DefaultText color={"#ccc"} font={"17px"}>
-                            Interactively procrastinate high-payoff content without backward-compatible data.
-                            Quickly cultivate optimal processes and tactical architectures
-                        </DefaultText>
-                        <DefaultBtn>Read More</DefaultBtn>
+                <HeaderBottom pLeft={headerImg ? '600px' : '0'} content={headerImg ? 'flex-start' : 'center'}>
+                    <HeaderBottomChild align={headerImg ? 'flex-start' : 'center'}>
+                        {headerImg ?
+                            <HeaderBottom1>
+                                <DefaultText weight={"700"} font={"31px"} fontBig={"52px"}>
+                                    Strategy Planning
+                                </DefaultText>
+                                <DefaultText color={"#ccc"} font={"17px"} fontBig={"23px"}>
+                                    Interactively procrastinate high-payoff content without backward-compatible data.
+                                    Quickly cultivate optimal processes and tactical architectures
+                                </DefaultText>
+                                <DefaultBtn>Read More</DefaultBtn>
+                            </HeaderBottom1>
+                            :
+                            <HeaderBottom2>
+                                <DefaultText align={"center"} weight={"700"} font={"31px"} fontBig={"52px"}>
+                                    Business Analysis
+                                </DefaultText>
+                                <DefaultText align={"center"} color={"#ccc"} font={"17px"} fontBig={"23px"}>
+                                    Proactively envisioned multimedia based on expertise cross-media growth strategies.
+                                    Pontificate installed based portals after maintainable products.
+                                </DefaultText>
+                                <DefaultBtn>Read More </DefaultBtn>
+                            </HeaderBottom2>
+                        }
+
                     </HeaderBottomChild>
 
                 </HeaderBottom>
