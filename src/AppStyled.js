@@ -7,35 +7,89 @@ export const Container = styled.div`
 
 export const DefaultText = styled.span`
     color: #fff;
-    width: 50%;
+    width: 100%;
     font-weight: ${props=>props.weight || 'normal'};
     font-size: ${props=>props.font || '14px'};
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 `;
 
+
 export const ChangeColorBtn = styled.div`
-    height: 40px;
+    height: 46px;
     width: 40px;
     background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
-    top: 100px;
-    left: 0px;
     color: #fff;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: left 0.4s;
+
+    :hover {
+        cursor: pointer;
+    }
+`;
+export const ChangeColorIcon = styled.img`
+    width: 20px;
+    height: 20px;
+    color: #fff;
+`;
+export const ChangeColorDiv = styled.div`
+    position: fixed;
+    top: 81px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: left 0.4s;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+`;
+export const ChangeColorDivTop = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 231px;
+    height: 46px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #282828;
+    font-size: 12px;
+    color: #fff;
+    align-items: center;
+    padding-left: 20px;
+    text-transform: uppercase;
+`;
+export const ChangeColorDivBottom = styled.div`
+    width: 205px;
+    height: 85px;
+    background-color: #3d3d3d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+export const ColorDivTop = styled.div`
+    display: flex;
+`;
+export const ColorDivBottom = styled.div`
+    display: flex;
+`;
+export const ColorDiv = styled.div`
+    width: 17px;
+    height: 17px;
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: ${props=>props.bgColor};
+    margin: 1px;
     
     :hover {
         cursor: pointer;
     }
-    
-    animation: colorBtn 2s;
-    
-    @keyframes colorBtn {
-        100% {
-            width: ${props=>props.width};
-        } 
-    }
 `;
+
+
+
 
 export const Header = styled.div`
    width: 100%;
@@ -55,7 +109,7 @@ export const HeaderTop = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #999;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
 `;
 export const HeaderTopLeft = styled.div``;
 export const HeaderTopRight = styled.div`
@@ -89,11 +143,14 @@ export const HeaderLink = styled.a`
 
 export const HeaderBottom = styled.div`
     height: 380px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 57px;
+`;
+export const HeaderBottomChild = styled.div`
+    width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    padding: 0 55px;
+    height: 380px;
 `;
 
