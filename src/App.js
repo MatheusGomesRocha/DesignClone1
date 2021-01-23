@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Cog from './img/settings.png';
 import {FaCog} from 'react-icons/fa';
 import {FaAngleLeft} from 'react-icons/fa';
@@ -39,15 +39,15 @@ import {
 } from '@material-ui/core/styles';
 
 export default () => {
-    const [colorBtn, setColorBtn] = useState(false);
-    const [leftDiv, setLeftDiv] = useState('-250px');
-    const [leftBtn, setLeftBtn] = useState('0');
+    const [colorBtn, setColorBtn] = useState(false);        // 1 - TRUE ou FALSE para saber se vai mostrar as opções para mudar a cor padrão do site
+    const [leftDiv, setLeftDiv] = useState('-250px');       // 2 - Position da Div na esquerda fora de tela, onde fica as opções para mudar de cor
+    const [leftBtn, setLeftBtn] = useState('0');            // 3 - Position do Button que aparece na tela da Div na esquerda
 
-    const [defaultColor, setDefaultColor] = useState('#D64391');
+    const [defaultColor, setDefaultColor] = useState('#D64391');    // 4 - Cor padrão ao entrar no site
 
-    const [headerImg, setHeaderImg] = useState(true);
+    const [headerImg, setHeaderImg] = useState(true);           // 5 - Imagem do header (como só tem 2 imagens, usei TRUE ou FALSE para facilitar)
 
-    const [arrowVisible, setArrowVisible] = useState('0');
+    const [arrowVisible, setArrowVisible] = useState('0');      // 6 - Opacidade dos button para mudar a imagem do header
 
     const DefaultBtn = withStyles(() => ({
         root: {
@@ -68,19 +68,29 @@ export default () => {
                 color: '#000'
             }
         },
-    }))(Button);
+    }))(Button);            // 7 - Default Button do site
 
-    const setBigColorBtn = () => {
-        if (colorBtn) {
+    const setBigColorBtn = () => {          /* 8 - Efeito de Drawer, ao clicar no button "item 3", se ainda não estiver clicado
+                                             vai mudar a position da Div "item 2", assim mostrando ela que anteriormente estava escondida,
+                                             se já estiver aberto, vai mudar novamente a position da Div e assim escondo-a
+                                             */
+
+        if (colorBtn) {                     // Aqui ele esconde a div
             setColorBtn(false);
             setLeftDiv('-250px');
             setLeftBtn('0');
-        } else {
+        } else {                            // Aqui ele mostra a div
             setColorBtn(true);
             setLeftDiv('0');
             setLeftBtn('211px');
         }
     };
+
+    useEffect(() => {               // Um hook do React para trocar a imagem do header a cada 8 segundos
+        setTimeout(() => {
+            setHeaderImg(!headerImg);
+        }, [8000])
+    }, [headerImg]);
 
     return (
         <Container>
@@ -119,12 +129,14 @@ export default () => {
 
             </ChangeColorDiv>
 
-            <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')} background={headerImg ? Pic1 : Pic2}>
+            <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}
+                    background={headerImg ? Pic1 : Pic2}>
                 <CarouselArrow opacity={arrowVisible} style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
                                onClick={() => setHeaderImg(!headerImg)}>
                     <img src={AngleLeft} width={20} height={20}/>
                 </CarouselArrow>
-                <CarouselArrow opacity={arrowVisible} style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
+                <CarouselArrow opacity={arrowVisible}
+                               style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
                                onClick={() => setHeaderImg(!headerImg)}>
                     <img src={AngleRight} width={20} height={20}/>
                 </CarouselArrow>
