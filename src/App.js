@@ -7,6 +7,7 @@ import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
 import AngleRight from './img/angle_right.png';
 import AngleLeft from './img/angle_left.png';
+import WhatWeDoComponent from "./components/WhatWeDoComponent";
 
 import {
     Container,
@@ -227,6 +228,8 @@ export default () => {
 
                 </HeaderBottom>
             </Header>
+
+            <WhatWeDoComponent defaultColor={defaultColor} />
         </Container>
     );
 }

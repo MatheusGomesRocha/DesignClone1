@@ -12,6 +12,7 @@ export const DefaultText = styled.span`
     font-size: ${props => props.font || '14px'};
     margin-bottom: 20px;
     text-align: ${props=>props.align || 'left'};
+    line-height: 1.8;
 
     @media(min-width: 1200px) {
         font-size: ${props=>props.fontBig || '25px'};
