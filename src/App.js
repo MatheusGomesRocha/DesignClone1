@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react';
 import Cog from './img/settings.png';
 import {FaCog} from 'react-icons/fa';
-import {FaSearch} from 'react-icons/fa';
-import {FaCartPlus} from 'react-icons/fa';
+import {AiOutlineSearch} from 'react-icons/ai';
+import {BiCart} from 'react-icons/bi';
 import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
 import AngleRight from './img/angle_right.png';
@@ -55,6 +55,9 @@ export default () => {
 
     const [arrowVisible, setArrowVisible] = useState('0');      // 6 - Opacidade dos button para mudar a imagem do header
 
+    const [overSearch, setOverSearch] = useState(false);
+    const [overCart, setOverCart] = useState(false);
+
     const DefaultBtn = withStyles(() => ({
         root: {
             backgroundColor: defaultColor,
@@ -99,7 +102,7 @@ export default () => {
     }, [headerImg]);
 
     const HeaderTopComponent = () => {
-        return(
+        return (
             <HeaderTop>
                 <HeaderTopLeft>
                     <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
@@ -107,36 +110,42 @@ export default () => {
 
                 <HeaderTopRight>
 
-                    <HeaderLinkDiv>
-                        <HeaderLink borderColor={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
+                    <HeaderLinkDiv >
+                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
                     </HeaderLinkDiv>
 
                     <HeaderLinkDiv>
-                        <HeaderLink borderColor={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
+                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
                     </HeaderLinkDiv>
 
                     <HeaderLinkDiv>
-                        <HeaderLink borderColor={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
+                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <HeaderLinkDiv borderColor={defaultColor}>
-                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
+                    <HeaderLinkDiv>
+                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <HeaderLinkDiv borderColor={defaultColor}>
-                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
+                    <HeaderLinkDiv>
+                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <HeaderLinkDiv borderColor={defaultColor}>
-                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
+                    <HeaderLinkDiv>
+                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <HeaderLinkDiv borderColor={defaultColor}>
-                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
+                    <HeaderLinkDiv>
+                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <FaSearch style={{marginRight: 15}} size={20} fill={"#fff"}/>
-                    <FaCartPlus size={20} fill={"#fff"}/>
+                    <HeaderLinkDiv style={{marginRight: 15}} onMouseOver={() => setOverSearch(true)} onMouseOut={() => setOverSearch(false)}>
+                        <AiOutlineSearch size={25} fill={overSearch ? defaultColor : '#fff'}/>
+                    </HeaderLinkDiv>
+
+                    <HeaderLinkDiv onMouseOver={() => setOverCart(true)} onMouseOut={() => setOverCart(false)}>
+                        <BiCart size={25} fill={overCart ? defaultColor : '#fff'}/>
+                    </HeaderLinkDiv>
+
                 </HeaderTopRight>
             </HeaderTop>
 
@@ -161,7 +170,7 @@ export default () => {
                 </CarouselArrowRight>
 
 
-                <HeaderTopComponent />
+                <HeaderTopComponent/>
 
 
                 <HeaderBottom pLeft={headerImg ? '560px' : '0'} content={headerImg ? 'flex-start' : 'center'}>
@@ -230,9 +239,9 @@ export default () => {
                 </HeaderBottom>
             </Header>
 
-            <WhatWeDoComponent defaultColor={defaultColor} />
+            <WhatWeDoComponent defaultColor={defaultColor}/>
 
-            <ContentImageComponent defaultColor={defaultColor} />
+            <ContentImageComponent defaultColor={defaultColor}/>
         </Container>
     );
 }

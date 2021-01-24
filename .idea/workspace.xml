@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516b798d-58dd-4d12-b921-74a284de0ae5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/img/pic3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/pic4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentImageComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentImageStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -39,11 +40,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -66,7 +69,9 @@
       <workItem from="1611413587569" duration="6374000" />
       <workItem from="1611451036820" duration="5990000" />
       <workItem from="1611492316598" duration="4330000" />
-      <workItem from="1611503854222" duration="1761000" />
+      <workItem from="1611503854222" duration="1804000" />
+      <workItem from="1611505733481" duration="184000" />
+      <workItem from="1611506341786" duration="2530000" />
     </task>
     <servers />
   </component>
@@ -94,23 +99,18 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>78</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
           <line>73</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>227</line>
+          <line>219</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>94</line>
+          <line>97</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -142,6 +142,12 @@
           <url>file://$PROJECT_DIR$/src/components/ContentImageComponent.js</url>
           <line>3</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
+          <line>182</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

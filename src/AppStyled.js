@@ -176,7 +176,7 @@ export const HeaderTop = styled.div`
 `;
 export const HeaderTopLeft = styled.div`
     display: flex;
-    padding: 35px 0 0 80px;
+    padding-left: 80px;
     
     @media(min-width: 1200px) {
         padding-left: 560px;
@@ -184,7 +184,7 @@ export const HeaderTopLeft = styled.div`
 `;
 export const HeaderTopRight = styled.div`
     display: flex;
-    padding: 60px 80px 0 0;
+    padding: 0 80px 0 0;
     
     @media(min-width: 1200px) {
         padding-right: 560px;
@@ -193,8 +193,8 @@ export const HeaderTopRight = styled.div`
 
 export const HeaderLinkDiv = styled.div`
     display: flex;
-    height: 75px;
-   
+    align-items: center;
+    
    :hover {
         cursor: pointer;
    }
@@ -208,20 +208,12 @@ export const HeaderLink = styled.a`
     text-align: center;
     text-transform: uppercase;
     margin-right: 25px;
+    transition: 0.2s;
     
-    :after {
-        display: block;
-        content: '';
-        border-bottom: solid 3px;
-        border-bottom-color: ${props=>props.borderColor};
-        transform: scaleX(0);
-        transition: transform 250ms ease-in-out;
-        padding-bottom: 30px;
+    :hover {
+        color: ${props=>props.color};
     }
     
-    :hover:after {
-        transform: scaleX(1);
-    }
 `;
 
 export const HeaderBottom = styled.div`

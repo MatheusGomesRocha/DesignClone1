@@ -32,11 +32,6 @@ export const IconDiv = styled.div`
     transition: 0.5s;
 `;
 
-export const Icon = styled.img`
-    width: 30px;
-    height: 30px;
-`;
-
 export const ContentDiv = styled.div`
     display: flex;
     flex-direction: column;
