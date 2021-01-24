@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-    padding: 100px 50px;
+    padding: 110px 50px;
     display: flex;
     flex-direction: row;
 `;

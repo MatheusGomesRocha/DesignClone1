@@ -254,7 +254,7 @@ export const HeaderBottom1 = styled.div`
     animation: fadein 2s;
     
     @keyframes fadein {
-        from {opacity: 0; transform: translateY(100%);}
+        from {opacity: 0; transform: translateY(20%);}
         to {opacity: 1;}
     }
     
@@ -272,7 +272,7 @@ export const HeaderBottom2 = styled.div`
 
     
     @keyframes fadein {
-        from {opacity: 0; transform: translateY(100%);}
+        from {opacity: 0; transform: translateY(20%);}
         to {opacity: 1;}
     }
 
