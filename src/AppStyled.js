@@ -20,8 +20,8 @@ export const DefaultText = styled.span`
 
 
 export const ChangeColorBtn = styled.div`
-    height: 46px;
-    width: 40px;
+    height: 48px;
+    width: 44px;
     background-color: #282828;
     display: flex;
     align-items: center;
@@ -38,19 +38,20 @@ export const ChangeColorBtn = styled.div`
 `;
 export const ChangeColorDiv = styled.div`
     position: fixed;
-    top: 81px;
+    top: 79px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     transition: left 0.4s;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    z-index: 999;
 `;
 export const ChangeColorDivTop = styled.div`
     display: flex;
     flex-direction: row;
     width: 231px;
-    height: 46px;
+    height: 48px;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     background-color: #282828;
@@ -91,31 +92,29 @@ export const ColorDiv = styled.div`
 
 export const Header = styled.div`
    width: 100%;
-   height: 455px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    position: relative;
-   
-   @media(min-width: 1200px) {
-        height: 780px;
-   }
+  
 `;
 export const HeaderImg = styled.div`
     width: 100%;
-    height: 455px;
+    height: 459px;
     position: absolute;
     top: 0;
     left: 0;
-    transition: 2s;
+    transition: all 2s ease;
     background-size: cover;
     background-position: center;
     background-image: url(${props=>props.background});
     object-fit: cover;
     
+    
     @media(min-width: 1200px) {
         height: 780px;
     }
+   
 `;
 
 // Contém Animação que preenche o background-color da esquerda para a direita ao realizar um hover
@@ -124,7 +123,7 @@ export const CarouselArrowLeft = styled.div`
     height: 80px;
     background-color: #fff;
     position: absolute;
-    z-index: 999;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,22 +163,22 @@ export const CarouselArrowRight = styled.div`
      }
 `;
 export const HeaderTop = styled.div`
-    height: 80px;
+    height: 77px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #999;
-    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #777;
+    background-color: rgba(0, 0, 0, 0.3);
     position: relative;
 `;
 export const HeaderTopLeft = styled.div`
     display: flex;
-    padding: 60px 0 0 80px;
+    padding: 35px 0 0 80px;
     
     @media(min-width: 1200px) {
-        padding-left: 600px;
+        padding-left: 560px;
     }
 `;
 export const HeaderTopRight = styled.div`
@@ -187,27 +186,36 @@ export const HeaderTopRight = styled.div`
     padding: 60px 80px 0 0;
     
     @media(min-width: 1200px) {
-        padding-right: 600px;
+        padding-right: 560px;
     }
 `;
 
+export const HeaderLinkDiv = styled.div`
+    display: flex;
+    height: 75px;
+   
+   :hover {
+        cursor: pointer;
+   }
+`;
 // Contém animação que inicia uma border-bottom do centro para esquerda e direita
 export const HeaderLink = styled.a`
     color: #fff;
-    height: 80px;
     font-weight: bold;
     font-size: ${props => props.font || '14px'};
     text-decoration: none;
-    margin-right: 25px;
     text-align: center;
     text-transform: uppercase;
+    margin-right: 25px;
     
     :after {
         display: block;
         content: '';
-        border-bottom: solid 2px #019fb6;
+        border-bottom: solid 3px;
+        border-bottom-color: ${props=>props.borderColor};
         transform: scaleX(0);
         transition: transform 250ms ease-in-out;
+        padding-bottom: 30px;
     }
     
     :hover:after {
@@ -216,8 +224,8 @@ export const HeaderLink = styled.a`
 `;
 
 export const HeaderBottom = styled.div`
-    height: 375px;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 381px;
+    background-color: rgba(0, 0, 0, 0.3);
     padding-left: 80px;
     display: flex;
     align-items: center;
@@ -225,7 +233,7 @@ export const HeaderBottom = styled.div`
     position: relative;
     
     @media(min-width: 1200px) {
-        height: 700px;
+        height: 702px;
         padding-left: ${props=>props.pLeft};
     }
 `;
@@ -248,6 +256,10 @@ export const HeaderBottom1 = styled.div`
         from {opacity: 0; transform: translateY(100%);}
         to {opacity: 1;}
     }
+    
+    @media(min-width: 1200px) {
+        width: 70%;
+    }
 `;
 
 // Contém animação de fade de baixo para cima
@@ -263,4 +275,7 @@ export const HeaderBottom2 = styled.div`
         to {opacity: 1;}
     }
 
+    @media(min-width: 1200px) {
+        width: 70%;
+    }
 `;

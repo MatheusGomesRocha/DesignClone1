@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/pic1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/pic1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/pic2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/pic2.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,8 @@
       <workItem from="1611372313122" duration="5226000" />
       <workItem from="1611403790300" duration="122000" />
       <workItem from="1611404437658" duration="4087000" />
-      <workItem from="1611413587569" duration="6070000" />
+      <workItem from="1611413587569" duration="6374000" />
+      <workItem from="1611451036820" duration="5990000" />
     </task>
     <servers />
   </component>
@@ -80,7 +83,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>59</line>
+          <line>60</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -89,43 +92,43 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>148</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>71</line>
+          <line>72</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>218</line>
+          <line>226</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>38</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
           <line>92</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>121</line>
+          <line>75</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>91</line>
+          <line>78</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
+          <line>92</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
+          <line>49</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

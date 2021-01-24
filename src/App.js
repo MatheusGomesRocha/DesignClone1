@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react';
 import Cog from './img/settings.png';
 import {FaCog} from 'react-icons/fa';
-import {FaAngleLeft} from 'react-icons/fa';
-import {FaAngleRight} from 'react-icons/fa';
+import {FaSearch} from 'react-icons/fa';
+import {FaCartPlus} from 'react-icons/fa';
 import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
 import AngleRight from './img/angle_right.png';
@@ -33,7 +33,7 @@ import {
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg
+    HeaderImg, HeaderLinkDiv
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
@@ -57,7 +57,7 @@ export default () => {
         root: {
             backgroundColor: defaultColor,
             color: '#fff',
-            height: 50,
+            height: 45,
             width: 130,
             borderRadius: 30,
             marginTop: 10,
@@ -96,45 +96,56 @@ export default () => {
         }, [8000])
     }, [headerImg]);
 
+    const HeaderTopComponent = () => {
+        return(
+            <HeaderTop>
+                <HeaderTopLeft>
+                    <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
+                </HeaderTopLeft>
+
+                <HeaderTopRight>
+
+                    <HeaderLinkDiv>
+                        <HeaderLink borderColor={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
+                    </HeaderLinkDiv>
+
+                    <HeaderLinkDiv>
+                        <HeaderLink borderColor={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
+                    </HeaderLinkDiv>
+
+                    <HeaderLinkDiv>
+                        <HeaderLink borderColor={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
+                    </HeaderLinkDiv>
+
+                    <HeaderLinkDiv borderColor={defaultColor}>
+                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
+                    </HeaderLinkDiv>
+
+                    <HeaderLinkDiv borderColor={defaultColor}>
+                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
+                    </HeaderLinkDiv>
+
+                    <HeaderLinkDiv borderColor={defaultColor}>
+                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
+                    </HeaderLinkDiv>
+
+                    <HeaderLinkDiv borderColor={defaultColor}>
+                        <HeaderLink  borderColor={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
+                    </HeaderLinkDiv>
+
+                    <FaSearch style={{marginRight: 15}} size={20} fill={"#fff"}/>
+                    <FaCartPlus size={20} fill={"#fff"}/>
+                </HeaderTopRight>
+            </HeaderTop>
+
+        );
+    }
+
+
     return (
         <Container>
-            <ChangeColorDiv style={{left: leftDiv}}>
-                <ChangeColorDivTop>
-                    Color Switcher
-                    <ChangeColorBtn style={{left: leftBtn}} id={"div"} onClick={setBigColorBtn}>
-                        <FaCog size={"20px"} fill={"#fff"}/>
-                    </ChangeColorBtn>
-                </ChangeColorDivTop>
 
-                <ChangeColorDivBottom>
-                    <ColorDivTop>
-                        <ColorDiv bgColor={"#495D7F"} onClick={() => setDefaultColor('#495D7F')}></ColorDiv>
-                        <ColorDiv bgColor={"#D64391"} onClick={() => setDefaultColor('#D64391')}></ColorDiv>
-                        <ColorDiv bgColor={"#FFB400"} onClick={() => setDefaultColor('#FFB400')}></ColorDiv>
-                        <ColorDiv bgColor={"#0767C9"} onClick={() => setDefaultColor('#0767C9')}></ColorDiv>
-                        <ColorDiv bgColor={"#FCAB55"} onClick={() => setDefaultColor('#FCAB55')}></ColorDiv>
-                        <ColorDiv bgColor={"#917AE9"} onClick={() => setDefaultColor('#917AE9')}></ColorDiv>
-                        <ColorDiv bgColor={"#74AEA1"} onClick={() => setDefaultColor('#74AEA1')}></ColorDiv>
-                        <ColorDiv bgColor={"#BFA980"} onClick={() => setDefaultColor('#BFA980')}></ColorDiv>
-                    </ColorDivTop>
-
-                    <ColorDivBottom>
-                        <ColorDiv bgColor={"#784E3D"} onClick={() => setDefaultColor('#784E3D')}></ColorDiv>
-                        <ColorDiv bgColor={"#555555"} onClick={() => setDefaultColor('#555555')}></ColorDiv>
-                        <ColorDiv bgColor={"#911938"} onClick={() => setDefaultColor('#911938')}></ColorDiv>
-                        <ColorDiv bgColor={"#DD3737"} onClick={() => setDefaultColor('#DD3737')}></ColorDiv>
-                        <ColorDiv bgColor={"#B3C211"} onClick={() => setDefaultColor('#B3C211')}></ColorDiv>
-                        <ColorDiv bgColor={"#37B6BD"} onClick={() => setDefaultColor('#37B6BD')}></ColorDiv>
-                        <ColorDiv bgColor={"#44B272"} onClick={() => setDefaultColor('#44B272')}></ColorDiv>
-                        <ColorDiv bgColor={"#FA5B0F"} onClick={() => setDefaultColor('#FA5B0F')}></ColorDiv>
-                    </ColorDivBottom>
-
-                </ChangeColorDivBottom>
-
-            </ChangeColorDiv>
-
-            <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}
-                    >
+            <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}>
                 <HeaderImg background={headerImg ? Pic1 : Pic2}></HeaderImg>
                 <CarouselArrowLeft bgHover={defaultColor} opacity={arrowVisible}
                                    style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
@@ -146,20 +157,47 @@ export default () => {
                                     onClick={() => setHeaderImg(!headerImg)}>
                     <img src={AngleRight} width={20} height={20}/>
                 </CarouselArrowRight>
-                <HeaderTop>
-                    <HeaderTopLeft>
-                        <HeaderLink href={"#"} font={"25px"}>sphene</HeaderLink>
-                    </HeaderTopLeft>
-                    <HeaderTopRight>
-                        <HeaderLink font={"13px"} href={"#"}>home</HeaderLink>
-                        <HeaderLink font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
-                        <HeaderLink font={"13px"} href={"#"}>Pages</HeaderLink>
-                        <HeaderLink font={"13px"} href={"#"}>elements</HeaderLink>
-                        <HeaderLink font={"13px"} href={"#"}>shop</HeaderLink>
-                    </HeaderTopRight>
-                </HeaderTop>
 
-                <HeaderBottom pLeft={headerImg ? '600px' : '0'} content={headerImg ? 'flex-start' : 'center'}>
+
+                <HeaderTopComponent />
+
+
+                <HeaderBottom pLeft={headerImg ? '560px' : '0'} content={headerImg ? 'flex-start' : 'center'}>
+                    <ChangeColorDiv style={{left: leftDiv}}>
+                        <ChangeColorDivTop>
+                            Color Switcher
+                            <ChangeColorBtn style={{left: leftBtn}} id={"div"} onClick={setBigColorBtn}>
+                                <FaCog size={"20px"} fill={"#fff"}/>
+                            </ChangeColorBtn>
+                        </ChangeColorDivTop>
+
+                        <ChangeColorDivBottom>
+                            <ColorDivTop>
+                                <ColorDiv bgColor={"#495D7F"} onClick={() => setDefaultColor('#495D7F')}></ColorDiv>
+                                <ColorDiv bgColor={"#D64391"} onClick={() => setDefaultColor('#D64391')}></ColorDiv>
+                                <ColorDiv bgColor={"#FFB400"} onClick={() => setDefaultColor('#FFB400')}></ColorDiv>
+                                <ColorDiv bgColor={"#0767C9"} onClick={() => setDefaultColor('#0767C9')}></ColorDiv>
+                                <ColorDiv bgColor={"#FCAB55"} onClick={() => setDefaultColor('#FCAB55')}></ColorDiv>
+                                <ColorDiv bgColor={"#917AE9"} onClick={() => setDefaultColor('#917AE9')}></ColorDiv>
+                                <ColorDiv bgColor={"#74AEA1"} onClick={() => setDefaultColor('#74AEA1')}></ColorDiv>
+                                <ColorDiv bgColor={"#BFA980"} onClick={() => setDefaultColor('#BFA980')}></ColorDiv>
+                            </ColorDivTop>
+
+                            <ColorDivBottom>
+                                <ColorDiv bgColor={"#784E3D"} onClick={() => setDefaultColor('#784E3D')}></ColorDiv>
+                                <ColorDiv bgColor={"#555555"} onClick={() => setDefaultColor('#555555')}></ColorDiv>
+                                <ColorDiv bgColor={"#911938"} onClick={() => setDefaultColor('#911938')}></ColorDiv>
+                                <ColorDiv bgColor={"#DD3737"} onClick={() => setDefaultColor('#DD3737')}></ColorDiv>
+                                <ColorDiv bgColor={"#B3C211"} onClick={() => setDefaultColor('#B3C211')}></ColorDiv>
+                                <ColorDiv bgColor={"#37B6BD"} onClick={() => setDefaultColor('#37B6BD')}></ColorDiv>
+                                <ColorDiv bgColor={"#44B272"} onClick={() => setDefaultColor('#44B272')}></ColorDiv>
+                                <ColorDiv bgColor={"#FA5B0F"} onClick={() => setDefaultColor('#FA5B0F')}></ColorDiv>
+                            </ColorDivBottom>
+
+                        </ChangeColorDivBottom>
+
+                    </ChangeColorDiv>
+
                     <HeaderBottomChild align={headerImg ? 'flex-start' : 'center'}>
                         {headerImg ?
                             <HeaderBottom1>
