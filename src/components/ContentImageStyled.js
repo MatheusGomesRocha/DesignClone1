@@ -20,7 +20,7 @@ export const SideDiv = styled.div`
     justify-content: center;
 
     @media(min-width: 1200px) {
-        height: 600px;
+        height: 550px;
     }
 `;
 
@@ -33,8 +33,8 @@ export const Title = styled.span`
     width: 70%;
     
     @media(min-width: 1200px) {
-        width: 60%;
-        font-size: 40px;
+        width: 70%;
+        font-size: 45px;
         margin: 0 200px;
     }
 `;
@@ -62,6 +62,6 @@ export const SideImg = styled.div`
     background-position: center;
     
     @media(min-width: 1200px) {
-        height: 600px;
+        height: 550px;
     }
 `;

@@ -14,11 +14,16 @@ import {
 
 import {withStyles} from "@material-ui/core/styles";
 import {Button} from "@material-ui/core";
+import {useMediaQuery} from "react-responsive";
 
 import Pic3 from '../img/pic3.jpg';
 import Pic4 from '../img/pic4.jpg';
 
 export default (props) => {
+    const isLgDesktop = useMediaQuery({
+        query: '(min-width: 1501px)'
+    });
+
     const DefaultBtn = withStyles(() => ({
         root: {
             border: `2px solid ${props.defaultColor}`,
@@ -26,7 +31,7 @@ export default (props) => {
             height: 50,
             width: 150,
             borderRadius: 30,
-            marginLeft: 200,
+            marginLeft: isLgDesktop ? 200 : 60,
             fontWeight: 'bold',
             textDecoration: 'none',
             fontSize: 12,

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-    padding: 110px 50px;
+    padding: 105px 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -35,7 +35,7 @@ export const IconDiv = styled.div`
 export const ContentDiv = styled.div`
     display: flex;
     flex-direction: column;
-    width: 55%;
+    width: 60%;
     margin-left: 25px;
     
     @media(min-width: 1400px) {
@@ -45,10 +45,10 @@ export const ContentDiv = styled.div`
 
 export const Title = styled.span`
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
     
     @media(min-width: 1400px) {
-        font-size: 20px;
+        font-size: 25px;
     }
 `;
 
@@ -56,9 +56,9 @@ export const Content = styled.span`
     color: #777;
     margin-top: 10px;
     line-height: 1.8;
-    font-size: 15px;
+    font-size: 16px;
     
     @media(min-width: 1400px) {
-        font-size: 16px;
+        font-size: 18px;
     }
 `;

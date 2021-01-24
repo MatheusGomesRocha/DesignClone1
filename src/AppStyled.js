@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import Pic1 from './img/pic2.jpg';
 
 export const Container = styled.div`
-    font-family: 'Ubuntu', sans-serif;
+    font-family: Candara;
 `;
 
 export const DefaultText = styled.span`

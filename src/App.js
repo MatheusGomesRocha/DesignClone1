@@ -97,6 +97,7 @@ export default () => {
         }
     };
 
+
     useEffect(() => {               // Um hook do React para trocar a imagem do header a cada 8 segundos
         setTimeout(() => {
             setHeaderImg(!headerImg);
