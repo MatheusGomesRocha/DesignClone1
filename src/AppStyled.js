@@ -213,7 +213,20 @@ export const HeaderLink = styled.a`
     :hover {
         color: ${props=>props.color};
     }
-    
+`;
+export const Badge = styled.div`
+    position: relative;
+    top: -10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: ${props=>props.background};
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
 `;
 
 export const HeaderBottom = styled.div`

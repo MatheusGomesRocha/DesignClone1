@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +69,7 @@
       <workItem from="1611492316598" duration="4330000" />
       <workItem from="1611503854222" duration="1804000" />
       <workItem from="1611505733481" duration="184000" />
-      <workItem from="1611506341786" duration="2530000" />
+      <workItem from="1611506341786" duration="2894000" />
     </task>
     <servers />
   </component>
@@ -105,12 +103,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>219</line>
+          <line>232</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>97</line>
+          <line>99</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

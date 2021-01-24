@@ -29,13 +29,15 @@ import {
     HeaderTop,
     HeaderTopLeft,
     HeaderTopRight,
+    HeaderLinkDiv,
     HeaderLink,
+    Badge,
 
     HeaderBottom,
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg, HeaderLinkDiv
+    HeaderImg,
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
@@ -138,12 +140,13 @@ export default () => {
                         <HeaderLink color={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <HeaderLinkDiv style={{marginRight: 15}} onMouseOver={() => setOverSearch(true)} onMouseOut={() => setOverSearch(false)}>
+                    <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)} onMouseOut={() => setOverSearch(false)}>
                         <AiOutlineSearch size={25} fill={overSearch ? defaultColor : '#fff'}/>
                     </HeaderLinkDiv>
 
                     <HeaderLinkDiv onMouseOver={() => setOverCart(true)} onMouseOut={() => setOverCart(false)}>
                         <BiCart size={25} fill={overCart ? defaultColor : '#fff'}/>
+                        <Badge background={defaultColor}>1</Badge>
                     </HeaderLinkDiv>
 
                 </HeaderTopRight>
