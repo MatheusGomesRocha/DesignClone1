@@ -8,51 +8,58 @@ export const MainDiv = styled.div`
 
 export const RowDiv = styled.div`
     display: flex;
+    background-color: ${props=>props.background || '#eee'};
+
 `;
 
 export const SideDiv = styled.div`
     width: 50%;
     height: 620px;
-    background-color: ${props=>props.background || '#eee'};
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 80px;
-    
+
     @media(min-width: 1200px) {
         height: 600px;
-        padding-left: 300px;
     }
 `;
 
 export const Title = styled.span`
     font-weight: bold;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 1.5;
     color: ${props=>props.color || '#000'};
+    margin: 0 60px;
+    width: 70%;
     
     @media(min-width: 1200px) {
-        width: 50%;
-        font-size: 35px;
+        width: 60%;
+        font-size: 40px;
+        margin: 0 200px;
     }
 `;
 
 export const Content = styled.span`
-    line-height: 2;
-    margin-top: 20px;
-    font-size: 18px;
+    line-height: 1.8;
+    font-size: 19px;
     color: ${props=>props.color || '#777'};
+    width: 70%;
+    margin: 20px 60px;
 
     @media(min-width: 1200px) {
-        width: 50%;
-        font-size: 22px;
+        width: 60%;
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px 0 50px 200px;
     }
 `;
 
-export const SideImg = styled.img`
+export const SideImg = styled.div`
     width: 50%;
-    height: auto;
+    height: 620px;
+    background-image: url(${props=>props.background});
     background-size: cover;
+    background-position: center;
     
     @media(min-width: 1200px) {
         height: 600px;

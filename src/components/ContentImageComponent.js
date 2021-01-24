@@ -15,7 +15,8 @@ import {
 import {withStyles} from "@material-ui/core/styles";
 import {Button} from "@material-ui/core";
 
-import Pic1 from '../img/pic1.jpg';
+import Pic3 from '../img/pic3.jpg';
+import Pic4 from '../img/pic4.jpg';
 
 export default (props) => {
     const DefaultBtn = withStyles(() => ({
@@ -25,12 +26,12 @@ export default (props) => {
             height: 50,
             width: 150,
             borderRadius: 30,
-            marginTop: 30,
+            marginLeft: 200,
             fontWeight: 'bold',
             textDecoration: 'none',
             fontSize: 12,
             textTransform: 'uppercase',
-            transition: '0.4s',
+            transition: '0.2s',
 
             '&:hover': {
                 backgroundColor: props.defaultColor,
@@ -50,17 +51,17 @@ export default (props) => {
                     </Content>
                     <DefaultBtn>read more</DefaultBtn>
                 </SideDiv>
-                <SideImg src={Pic1} />
+                <SideImg background={Pic3}></SideImg>
             </RowDiv>
 
-            <RowDiv>
-                <SideImg src={Pic1} />
+            <RowDiv background={"#282828"}>
+                <SideImg background={Pic4}></SideImg>
 
-                <SideDiv background={"#282828"}>
-                    <Title color={"#fff"}>Whatever We Start, We Think Through To The End</Title>
+                <SideDiv>
+                    <Title color={"#fff"}>Everybody Gets Exactly What They Need</Title>
                     <Content color={"#ccc"}>
-                        Globally incubate standards compliant channels before scalable benefits. Quickly disseminate
-                        superior deliverables whereas web-enabled applications.
+                        Bring to the table win-win survival strategies to ensure proactive domination. At the end of the
+                        day, going forward, a new normal that has evolved from generation.
                     </Content>
                     <DefaultBtn>read more</DefaultBtn>
                 </SideDiv>
