@@ -1,12 +1,11 @@
 import {useEffect, useState} from 'react';
-import Cog from './img/settings.png';
 import {FaCog} from 'react-icons/fa';
 import {AiOutlineSearch} from 'react-icons/ai';
+import {FaAngleLeft} from 'react-icons/fa';
+import {FaAngleRight} from 'react-icons/fa';
 import {BiCart} from 'react-icons/bi';
 import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
-import AngleRight from './img/angle_right.png';
-import AngleLeft from './img/angle_left.png';
 import WhatWeDoComponent from "./components/WhatWeDoComponent";
 import ContentImageComponent from "./components/ContentImageComponent";
 
@@ -59,6 +58,8 @@ export default () => {
 
     const [overSearch, setOverSearch] = useState(false);
     const [overCart, setOverCart] = useState(false);
+    const [overLeft, setOverLeft] = useState(false);
+    const [overRight, setOverRight] = useState(false);
 
     const [headerShow, setHeaderShow] = useState(false);
 
@@ -107,7 +108,7 @@ export default () => {
     }, [headerImg]);
 
     const handleScroll = () => {
-        if(document.documentElement.scrollTop > 80) {
+        if (document.documentElement.scrollTop > 80) {
             setHeaderShow(true);
         } else {
             setHeaderShow(false);
@@ -120,7 +121,8 @@ export default () => {
 
     const HeaderTopComponent = () => {
         return (
-            <HeaderTop background={headerShow ? '#000' : 'rgba(0, 0, 0, 0.3)'} position={headerShow ? 'fixed' : 'relative'}>
+            <HeaderTop background={headerShow ? '#000' : 'rgba(0, 0, 0, 0.3)'}
+                       position={headerShow ? 'fixed' : 'relative'}>
 
                 <HeaderTopLeft>
                     <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
@@ -128,7 +130,7 @@ export default () => {
 
                 <HeaderTopRight>
 
-                    <HeaderLinkDiv >
+                    <HeaderLinkDiv>
                         <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
                     </HeaderLinkDiv>
 
@@ -156,7 +158,8 @@ export default () => {
                         <HeaderLink color={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)} onMouseOut={() => setOverSearch(false)}>
+                    <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)}
+                                   onMouseOut={() => setOverSearch(false)}>
                         <AiOutlineSearch size={25} fill={overSearch ? defaultColor : '#fff'}/>
                     </HeaderLinkDiv>
 
@@ -181,7 +184,7 @@ export default () => {
 
                 <HeaderTopRight>
 
-                    <HeaderLinkDiv >
+                    <HeaderLinkDiv>
                         <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
                     </HeaderLinkDiv>
 
@@ -209,7 +212,8 @@ export default () => {
                         <HeaderLink color={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
                     </HeaderLinkDiv>
 
-                    <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)} onMouseOut={() => setOverSearch(false)}>
+                    <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)}
+                                   onMouseOut={() => setOverSearch(false)}>
                         <AiOutlineSearch size={25} fill={overSearch ? defaultColor : '#fff'}/>
                     </HeaderLinkDiv>
 
@@ -230,22 +234,25 @@ export default () => {
 
             <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}>
                 <HeaderImg background={headerImg ? Pic1 : Pic2}></HeaderImg>
-                <CarouselArrowLeft bgHover={defaultColor} opacity={arrowVisible}
+                <CarouselArrowLeft onMouseOver={() => setOverLeft(true)} onMouseOut={() => setOverLeft(false)}
+                                   bgHover={defaultColor} opacity={arrowVisible}
                                    style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
                                    onClick={() => setHeaderImg(!headerImg)}>
-                    <img src={AngleLeft} width={20} height={20}/>
+                    <FaAngleLeft fill={overLeft ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowLeft>
-                <CarouselArrowRight bgHover={defaultColor} opacity={arrowVisible}
+                <CarouselArrowRight onMouseOver={() => setOverRight(true)} onMouseOut={() => setOverRight(false)}
+                                    bgHover={defaultColor} opacity={arrowVisible}
                                     style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
                                     onClick={() => setHeaderImg(!headerImg)}>
-                    <img src={AngleRight} width={20} height={20}/>
+                    <FaAngleRight fill={overRight ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowRight>
 
 
                 <HeaderTopComponent/>
-                <HeaderTopComponentHidden />
+                <HeaderTopComponentHidden/>
 
-                <HeaderBottom pLeftNote={headerImg ? '200px' : '0'} pLeft={headerImg ? '300px' : '0'} content={headerImg ? 'flex-start' : 'center'}>
+                <HeaderBottom pLeftNote={headerImg ? '200px' : '0'} pLeft={headerImg ? '300px' : '0'}
+                              content={headerImg ? 'flex-start' : 'center'}>
                     <ChangeColorDiv style={{left: leftDiv}}>
                         <ChangeColorDivTop>
                             Color Switcher
