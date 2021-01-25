@@ -24,8 +24,6 @@ import {
     ColorDivBottom,
 
     Header,
-    CarouselArrowLeft,
-    CarouselArrowRight,
     HeaderTop,
     HeaderTopLeft,
     HeaderTopRight,
@@ -34,6 +32,8 @@ import {
     Badge,
 
     HeaderBottom,
+    CarouselArrowLeft,
+    CarouselArrowRight,
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
@@ -59,6 +59,8 @@ export default () => {
 
     const [overSearch, setOverSearch] = useState(false);
     const [overCart, setOverCart] = useState(false);
+
+    const [headerShow, setHeaderShow] = useState(false);
 
     const DefaultBtn = withStyles(() => ({
         root: {
@@ -104,9 +106,22 @@ export default () => {
         }, [8000])
     }, [headerImg]);
 
+    const handleScroll = () => {
+        if(document.documentElement.scrollTop > 80) {
+            setHeaderShow(true);
+        } else {
+            setHeaderShow(false);
+        }
+    }
+
+    useEffect(() => {
+        window.onscroll = () => handleScroll();
+    }, [])
+
     const HeaderTopComponent = () => {
         return (
-            <HeaderTop>
+            <HeaderTop background={headerShow ? '#000' : 'rgba(0, 0, 0, 0.3)'} position={headerShow ? 'fixed-top' : 'relative'}>
+
                 <HeaderTopLeft>
                     <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
                 </HeaderTopLeft>

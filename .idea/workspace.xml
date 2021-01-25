@@ -4,13 +4,8 @@
     <list default="true" id="516b798d-58dd-4d12-b921-74a284de0ae5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentImageComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContentImageStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageStyled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,8 @@
       <workItem from="1611492316598" duration="4330000" />
       <workItem from="1611503854222" duration="1804000" />
       <workItem from="1611505733481" duration="184000" />
-      <workItem from="1611506341786" duration="4045000" />
+      <workItem from="1611506341786" duration="4116000" />
+      <workItem from="1611571065571" duration="721000" />
     </task>
     <servers />
   </component>
@@ -108,12 +104,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>231</line>
+          <line>185</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>100</line>
+          <line>102</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -148,8 +144,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>181</line>
-          <properties lambdaOrdinal="-1" />
+          <line>135</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
