@@ -116,28 +116,23 @@ export const HeaderImg = styled.div`
 
 
 export const HeaderTop = styled.div`
-    height: 77px;
+    height: ${props=>props.height};
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #777;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: relative;
-`;
-export const HeaderTopHidden = styled.div`
-    height: 70px;
-    width: 100%;
-    display: ${props=>props.display};
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #777;
-    background-color: #222;
-    position: fixed;
+    position: ${props=>props.position};
     top: 0;
+    background-color: ${props=>props.background};
     z-index: 999;
+    transition: 0.4s;
+`;
+export const TopDivHidden = styled.div`
+    height: 77px;
+    position: relative;
+    display: ${props=>props.display}
 `;
 export const HeaderTopLeft = styled.div`
     display: flex;

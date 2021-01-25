@@ -24,6 +24,7 @@ import {
 
     Header,
     HeaderTop,
+    TopDivHidden,
     HeaderTopLeft,
     HeaderTopRight,
     HeaderLinkDiv,
@@ -36,7 +37,7 @@ import {
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg, HeaderTopHidden,
+    HeaderImg,
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
@@ -119,115 +120,6 @@ export default () => {
         window.onscroll = () => handleScroll();
     }, [])
 
-    const HeaderTopComponent = () => {
-        return (
-            <HeaderTop background={headerShow ? '#000' : 'rgba(0, 0, 0, 0.3)'}
-                       position={headerShow ? 'fixed' : 'relative'}>
-
-                <HeaderTopLeft>
-                    <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
-                </HeaderTopLeft>
-
-                <HeaderTopRight>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)}
-                                   onMouseOut={() => setOverSearch(false)}>
-                        <AiOutlineSearch size={25} fill={overSearch ? defaultColor : '#fff'}/>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv onMouseOver={() => setOverCart(true)} onMouseOut={() => setOverCart(false)}>
-                        <BiCart size={25} fill={overCart ? defaultColor : '#fff'}/>
-                        <Badge background={defaultColor}>8</Badge>
-                    </HeaderLinkDiv>
-
-                </HeaderTopRight>
-            </HeaderTop>
-
-        );
-    }
-
-    const HeaderTopComponentHidden = () => {
-        return (
-            <HeaderTopHidden display={headerShow ? 'flex' : 'none'}>
-
-                <HeaderTopLeft>
-                    <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
-                </HeaderTopLeft>
-
-                <HeaderTopRight>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv>
-                        <HeaderLink color={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)}
-                                   onMouseOut={() => setOverSearch(false)}>
-                        <AiOutlineSearch size={25} fill={overSearch ? defaultColor : '#fff'}/>
-                    </HeaderLinkDiv>
-
-                    <HeaderLinkDiv onMouseOver={() => setOverCart(true)} onMouseOut={() => setOverCart(false)}>
-                        <BiCart size={25} fill={overCart ? defaultColor : '#fff'}/>
-                        <Badge background={defaultColor}>8</Badge>
-                    </HeaderLinkDiv>
-
-                </HeaderTopRight>
-            </HeaderTopHidden>
-
-        );
-    }
-
 
     return (
         <Container>
@@ -248,8 +140,57 @@ export default () => {
                 </CarouselArrowRight>
 
 
-                <HeaderTopComponent/>
-                <HeaderTopComponentHidden/>
+                <HeaderTop height={headerShow ? '70px' : '77px'} background={headerShow ? '#000' : 'rgba(0, 0, 0, 0.3)'}
+                           position={headerShow ? 'fixed' : 'relative'}>
+
+                    <HeaderTopLeft>
+                        <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
+                    </HeaderTopLeft>
+
+                    <HeaderTopRight>
+
+                        <HeaderLinkDiv>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>contact</HeaderLink>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv style={{marginRight: 10, marginLeft: 5}} onMouseOver={() => setOverSearch(true)}
+                                       onMouseOut={() => setOverSearch(false)}>
+                            <AiOutlineSearch size={25} fill={overSearch ? defaultColor : '#fff'}/>
+                        </HeaderLinkDiv>
+
+                        <HeaderLinkDiv onMouseOver={() => setOverCart(true)} onMouseOut={() => setOverCart(false)}>
+                            <BiCart size={25} fill={overCart ? defaultColor : '#fff'}/>
+                            <Badge background={defaultColor}>8</Badge>
+                        </HeaderLinkDiv>
+
+                    </HeaderTopRight>
+                </HeaderTop>
+
+                <TopDivHidden display={headerShow ? 'flex' : 'none'}></TopDivHidden>
 
                 <HeaderBottom pLeftNote={headerImg ? '200px' : '0'} pLeft={headerImg ? '300px' : '0'}
                               content={headerImg ? 'flex-start' : 'center'}>
