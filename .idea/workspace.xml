@@ -74,6 +74,7 @@
       <workItem from="1611505733481" duration="184000" />
       <workItem from="1611506341786" duration="4116000" />
       <workItem from="1611571065571" duration="721000" />
+      <workItem from="1611574239171" duration="1440000" />
     </task>
     <servers />
   </component>
@@ -107,7 +108,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>198</line>
+          <line>205</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -147,7 +148,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>148</line>
+          <line>147</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

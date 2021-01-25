@@ -6,7 +6,7 @@ export const MainDiv = styled.div`
     flex-direction: row;
     justify-content: center;
     align-item: center;
-    
+
     @media(min-width: 1400px) {
         padding: 100px 0;
     }
@@ -16,7 +16,12 @@ export const ItemDiv = styled.div`
     display: flex;
     flex-direction: row;
     
-    @media(min-width: 1400px) {
+    
+    @media(min-width: 1200px) {
+        width: 30%;
+    }
+    
+    @media(min-width: 1800px) {
         width: 20%;
     }
 `;

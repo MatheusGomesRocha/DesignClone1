@@ -21,7 +21,7 @@ import Pic4 from '../img/pic4.jpg';
 
 export default (props) => {
     const isLgDesktop = useMediaQuery({
-        query: '(min-width: 1501px)'
+        query: '(min-width: 1800px)'
     });
 
     const DefaultBtn = withStyles(() => ({
@@ -31,7 +31,7 @@ export default (props) => {
             height: 50,
             width: 150,
             borderRadius: 30,
-            marginLeft: isLgDesktop ? 200 : 70,
+            marginLeft: isLgDesktop ? 200 : 100,
             fontWeight: 'bold',
             textDecoration: 'none',
             fontSize: 12,

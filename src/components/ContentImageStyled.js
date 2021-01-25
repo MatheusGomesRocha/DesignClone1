@@ -34,6 +34,12 @@ export const Title = styled.span`
     
     @media(min-width: 1200px) {
         width: 70%;
+        font-size: 40px;
+        line-height: 1.5;
+        margin: 0 100px;
+    } 
+    
+    @media(min-width: 1800px) {
         font-size: 45px;
         margin: 0 200px;
     }
@@ -48,6 +54,12 @@ export const Content = styled.span`
 
     @media(min-width: 1200px) {
         width: 60%;
+        font-size: 20px;
+        line-height: 1.5;
+        margin: 20px 0 50px 100px;
+    } 
+    
+    @media(min-width: 1800px) {
         font-size: 20px;
         line-height: 1.5;
         margin: 20px 0 50px 200px;

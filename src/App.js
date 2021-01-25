@@ -162,7 +162,7 @@ export default () => {
 
                     <HeaderLinkDiv onMouseOver={() => setOverCart(true)} onMouseOut={() => setOverCart(false)}>
                         <BiCart size={25} fill={overCart ? defaultColor : '#fff'}/>
-                        <Badge background={defaultColor}>1</Badge>
+                        <Badge background={defaultColor}>8</Badge>
                     </HeaderLinkDiv>
 
                 </HeaderTopRight>
@@ -215,7 +215,7 @@ export default () => {
 
                     <HeaderLinkDiv onMouseOver={() => setOverCart(true)} onMouseOut={() => setOverCart(false)}>
                         <BiCart size={25} fill={overCart ? defaultColor : '#fff'}/>
-                        <Badge background={defaultColor}>1</Badge>
+                        <Badge background={defaultColor}>8</Badge>
                     </HeaderLinkDiv>
 
                 </HeaderTopRight>
@@ -245,7 +245,7 @@ export default () => {
                 <HeaderTopComponent/>
                 <HeaderTopComponentHidden />
 
-                <HeaderBottom pLeft={headerImg ? '560px' : '0'} content={headerImg ? 'flex-start' : 'center'}>
+                <HeaderBottom pLeftNote={headerImg ? '200px' : '0'} pLeft={headerImg ? '300px' : '0'} content={headerImg ? 'flex-start' : 'center'}>
                     <ChangeColorDiv style={{left: leftDiv}}>
                         <ChangeColorDivTop>
                             Color Switcher

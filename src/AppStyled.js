@@ -55,7 +55,7 @@ export const ChangeColorDivTop = styled.div`
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     background-color: #282828;
-    font-size: 12px;
+    font-size: 16px;
     color: #fff;
     align-items: center;
     padding-left: 20px;
@@ -96,7 +96,6 @@ export const Header = styled.div`
    flex-direction: column;
    justify-content: center;
    position: relative;
-  
 `;
 export const HeaderImg = styled.div`
     width: 100%;
@@ -145,7 +144,11 @@ export const HeaderTopLeft = styled.div`
     padding-left: 70px;
     
     @media(min-width: 1200px) {
-        padding-left: 560px;
+        padding-left: 200px;
+    }
+    
+    @media(min-width: 1800px) {
+        padding-left: 300px;
     }
 `;
 export const HeaderTopRight = styled.div`
@@ -153,7 +156,11 @@ export const HeaderTopRight = styled.div`
     padding: 0 80px 0 0;
     
     @media(min-width: 1200px) {
-        padding-right: 560px;
+        padding-right: 200px;
+    }
+    
+    @media(min-width: 1800px) {
+        padding-right: 300px;
     }
 `;
 
@@ -206,6 +213,10 @@ export const HeaderBottom = styled.div`
     
     @media(min-width: 1200px) {
         height: 702px;
+        padding-left: ${props=>props.pLeftNote};
+    }
+    
+    @media(min-width: 1800px) {
         padding-left: ${props=>props.pLeft};
     }
 `;
@@ -261,6 +272,10 @@ export const HeaderBottomChild = styled.div`
     justify-content: center;
     align-items: ${props=>props.align || 'flex-start'};
     height: 380px;
+    
+    @media(min-width: 1200px) and (max-width: 1800px) {
+        width: 70%;
+    }
 `;
 
 // Contém animação de fade de baixo para cima
