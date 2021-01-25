@@ -29,7 +29,7 @@ export const Title = styled.span`
     font-size: 35px;
     line-height: 1.5;
     color: ${props=>props.color || '#000'};
-    margin: 0 60px;
+    margin: 0 70px;
     width: 70%;
     
     @media(min-width: 1200px) {
@@ -44,7 +44,7 @@ export const Content = styled.span`
     font-size: 19px;
     color: ${props=>props.color || '#777'};
     width: 70%;
-    margin: 20px 60px;
+    margin: 20px 70px;
 
     @media(min-width: 1200px) {
         width: 60%;

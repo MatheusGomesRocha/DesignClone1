@@ -31,7 +31,7 @@ export default (props) => {
             height: 50,
             width: 150,
             borderRadius: 30,
-            marginLeft: isLgDesktop ? 200 : 60,
+            marginLeft: isLgDesktop ? 200 : 70,
             fontWeight: 'bold',
             textDecoration: 'none',
             fontSize: 12,

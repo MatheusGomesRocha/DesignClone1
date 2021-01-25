@@ -124,12 +124,25 @@ export const HeaderTop = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #777;
-    background-color: ${props=>props.background};
+    background-color: rgba(0, 0, 0, 0.3);
     position: relative;
+`;
+export const HeaderTopHidden = styled.div`
+    height: 70px;
+    width: 100%;
+    display: ${props=>props.display};
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #777;
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    z-index: 999;
 `;
 export const HeaderTopLeft = styled.div`
     display: flex;
-    padding-left: 80px;
+    padding-left: 70px;
     
     @media(min-width: 1200px) {
         padding-left: 560px;

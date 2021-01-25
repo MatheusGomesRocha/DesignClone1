@@ -6,6 +6,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContentImageComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContentImageStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +107,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>185</line>
+          <line>198</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -144,8 +147,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>135</line>
+          <line>148</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>120</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

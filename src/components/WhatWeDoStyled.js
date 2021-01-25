@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-    padding: 105px 50px;
+    padding: 105px 70px;
     display: flex;
     flex-direction: row;
     justify-content: center;
