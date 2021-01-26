@@ -7,6 +7,11 @@ export const MainDiv = styled.div`
     justify-content: center;
     align-item: center;
 
+     @media(min-width: 300px) and (max-width: 540px) {
+        flex-direction: column;
+        padding: 50px 20px;
+     }
+    
     @media(min-width: 1400px) {
         padding: 100px 0;
     }
@@ -17,6 +22,10 @@ export const ItemDiv = styled.div`
     flex-direction: row;
     
     
+     @media(min-width: 300px) and (max-width: 540px) {
+        margin-top: 60px;
+     }
+     
     @media(min-width: 1200px) {
         width: 30%;
     }
@@ -33,7 +42,7 @@ export const IconDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: ${props=>props.background};
+    background: ${props => props.background};
     transition: 0.5s;
 `;
 

@@ -134,6 +134,9 @@ export const HeaderImg = styled.div`
     background-image: url(${props=>props.background});
     object-fit: cover;
     
+    @media(min-width: 300px) and (max-width: 540px) {
+    }
+    
     @media(min-width: 1200px) {
         height: 780px;
     }
@@ -153,6 +156,10 @@ export const HeaderTop = styled.div`
     background-color: ${props=>props.background};
     z-index: 999;
     transition: 0.8s;
+    
+    @media(min-width: 300px) and (max-width: 540px) {
+        display: none;
+    }
 `;
 export const TopDivHidden = styled.div`
     height: 77px;

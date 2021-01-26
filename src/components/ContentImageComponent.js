@@ -9,7 +9,8 @@ import {
 
     Content,
 
-    SideImg
+    SideImg,
+    SideImgMobile,
 } from './ContentImageStyled';
 
 import {withStyles} from "@material-ui/core/styles";
@@ -48,6 +49,8 @@ export default (props) => {
     return (
         <MainDiv>
             <RowDiv>
+                <SideImgMobile background={Pic3}></SideImgMobile>
+
                 <SideDiv>
                     <Title>Whatever We Start, We Think Through To The End</Title>
                     <Content>
@@ -56,7 +59,7 @@ export default (props) => {
                     </Content>
                     <DefaultBtn>read more</DefaultBtn>
                 </SideDiv>
-                <SideImg background={Pic3}></SideImg>
+                <SideImg display={'none'} background={Pic3}></SideImg>
             </RowDiv>
 
             <RowDiv background={"#282828"}>

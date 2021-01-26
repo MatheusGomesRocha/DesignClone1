@@ -125,7 +125,7 @@ export default () => {
 
             <LineDiv></LineDiv>
 
-            <Text>© Copyright 2016 by <a style={{color: '#fff', textDecoration: 'none'}}
+            <Text style={{textAlign: 'center'}}>© Copyright 2016 by <a style={{color: '#fff', textDecoration: 'none'}}
                                          href={"http://vasterad.com/themes/sphene/index-corporate.html#"}>Sphene</a>.
                 All Rights Reserved.</Text>
             <Text style={{marginBottom: 20}}>Copied by Matheus Gomes.</Text>

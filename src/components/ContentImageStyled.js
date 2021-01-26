@@ -10,6 +10,9 @@ export const RowDiv = styled.div`
     display: flex;
     background-color: ${props=>props.background || '#eee'};
 
+    @media(min-width: 300px) and (max-width: 540px) {
+        flex-direction: column;
+    }
 `;
 
 export const SideDiv = styled.div`
@@ -19,6 +22,11 @@ export const SideDiv = styled.div`
     flex-direction: column;
     justify-content: center;
 
+
+    @media(min-width: 300px) and (max-width: 540px) {
+        width: 100%;
+    }
+    
     @media(min-width: 1200px) {
         height: 550px;
     }
@@ -72,6 +80,29 @@ export const SideImg = styled.div`
     background-image: url(${props=>props.background});
     background-size: cover;
     background-position: center;
+    
+    @media(min-width: 300px) and (max-width: 540px) {
+        width: 100%;
+        display: ${props=>props.display || 'block'};
+    }
+    
+    @media(min-width: 1200px) {
+        height: 550px;
+    }
+`;
+
+export const SideImgMobile = styled.div`
+    width: 50%;
+    height: 620px;
+    background-image: url(${props=>props.background});
+    background-size: cover;
+    background-position: center;
+    display: none;
+    
+    @media(min-width: 300px) and (max-width: 540px) {
+        width: 100%;
+        display: block;
+    }
     
     @media(min-width: 1200px) {
         height: 550px;

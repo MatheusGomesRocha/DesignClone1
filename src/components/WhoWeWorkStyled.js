@@ -7,10 +7,14 @@ export const MainDiv = styled.div`
     align-items: center;
     justify-content: center;
     height: 500px;
+    
+    @media(min-width: 300px) and (max-width: 540px) {
+        padding: 100px 50px;
+    }
 `;
 
 export const SideDiv = styled.div`
-    margin: 0 100px;
+    margin: 0 ;
     
     :hover {
         cursor: pointer;
