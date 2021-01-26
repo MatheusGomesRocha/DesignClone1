@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516b798d-58dd-4d12-b921-74a284de0ae5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/WhoWeWorkComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/WhoWeWorkStyled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhoWeWorkComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhoWeWorkComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhoWeWorkStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhoWeWorkStyled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +76,8 @@
       <workItem from="1611506341786" duration="4116000" />
       <workItem from="1611571065571" duration="721000" />
       <workItem from="1611574239171" duration="1525000" />
-      <workItem from="1611585139098" duration="4515000" />
+      <workItem from="1611585139098" duration="7886000" />
+      <workItem from="1611616275103" duration="4784000" />
     </task>
     <servers />
   </component>
@@ -113,7 +116,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>104</line>
+          <line>105</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

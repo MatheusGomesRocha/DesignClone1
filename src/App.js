@@ -1,13 +1,14 @@
 import {useEffect, useState} from 'react';
 import {FaCog} from 'react-icons/fa';
 import {AiOutlineSearch} from 'react-icons/ai';
-import {FaAngleLeft} from 'react-icons/fa';
-import {FaAngleRight} from 'react-icons/fa';
+import {IoIosArrowBack} from 'react-icons/io';
+import {IoIosArrowForward} from 'react-icons/io';
 import {BiCart} from 'react-icons/bi';
 import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
 import WhatWeDoComponent from "./components/WhatWeDoComponent";
 import ContentImageComponent from "./components/ContentImageComponent";
+import WhoWeWorkComponent from "./components/WhoWeWorkComponent";
 
 import {
     Container,
@@ -130,17 +131,17 @@ export default () => {
                                    bgHover={defaultColor} opacity={arrowVisible}
                                    style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
                                    onClick={() => setHeaderImg(!headerImg)}>
-                    <FaAngleLeft fill={overLeft ? '#fff' : '#000'} size={30}/>
+                    <IoIosArrowBack fill={overLeft ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowLeft>
                 <CarouselArrowRight onMouseOver={() => setOverRight(true)} onMouseOut={() => setOverRight(false)}
                                     bgHover={defaultColor} opacity={arrowVisible}
                                     style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
                                     onClick={() => setHeaderImg(!headerImg)}>
-                    <FaAngleRight fill={overRight ? '#fff' : '#000'} size={30}/>
+                    <IoIosArrowForward fill={overRight ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowRight>
 
 
-                <HeaderTop height={headerShow ? '70px' : '77px'} background={headerShow ? '#000' : 'rgba(0, 0, 0, 0.3)'}
+                <HeaderTop height={headerShow ? '66px' : '77px'} background={headerShow ? '#282828' : 'rgba(0, 0, 0, 0.3)'}
                            position={headerShow ? 'fixed' : 'relative'}>
 
                     <HeaderTopLeft>
@@ -262,6 +263,8 @@ export default () => {
             <WhatWeDoComponent defaultColor={defaultColor}/>
 
             <ContentImageComponent defaultColor={defaultColor}/>
+
+            <WhoWeWorkComponent/>
         </Container>
     );
 }

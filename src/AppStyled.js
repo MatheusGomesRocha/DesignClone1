@@ -127,7 +127,7 @@ export const HeaderTop = styled.div`
     top: 0;
     background-color: ${props=>props.background};
     z-index: 999;
-    transition: 0.4s;
+    transition: 0.8s;
 `;
 export const TopDivHidden = styled.div`
     height: 77px;
