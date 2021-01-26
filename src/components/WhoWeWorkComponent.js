@@ -20,20 +20,25 @@ export default () => {
     const [content, setContent] = useState(1);
     const [fillIcon1, setFillIcon1] = useState(false);
     const [fillIcon2, setFillIcon2] = useState(false);
+    const [animationNeg, setAnimationNeg] = useState(false);
 
     const setContentPrev = () => {
         if (content === 1) {
             setContent(3);
+            setAnimationNeg(true);
         } else {
             setContent(content - 1);
+            setAnimationNeg(true);
         }
     }
 
     const setContentNext = () => {
         if (content === 3) {
+            setAnimationNeg(false);
             setContent(1);
         } else {
             setContent(content + 1);
+            setAnimationNeg(false);
         }
     }
 
@@ -84,7 +89,7 @@ export default () => {
             </div>
 
             <SideDiv onMouseOver={() => setFillIcon2(true)} onMouseOut={() => setFillIcon2(false)} onClick={setContentNext}>
-                <BsArrowRight fill={fillIcon2 ? '#282828' : '#000'} size={45}/>
+                <BsArrowRight fill={fillIcon2 ? '#282828' : '#999'} size={45}/>
             </SideDiv>
 
         </MainDiv>

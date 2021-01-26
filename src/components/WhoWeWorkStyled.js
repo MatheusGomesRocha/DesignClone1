@@ -28,7 +28,7 @@ export const CenterDiv = styled.div`
     animation: fade 1s;
   
     @keyframes fade {
-      from {opacity: 0; transform: translateX(80%);}
+      from {opacity: 0; transform: translateX(50%);}
       to {opacity: 1}
     }
     
