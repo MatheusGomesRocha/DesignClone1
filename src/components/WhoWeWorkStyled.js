@@ -7,10 +7,6 @@ export const MainDiv = styled.div`
     align-items: center;
     justify-content: center;
     height: 500px;
-    
-    @media(min-width: 300px) and (max-width: 540px) {
-        padding: 100px 50px;
-    }
 `;
 
 export const SideDiv = styled.div`
@@ -36,6 +32,10 @@ export const CenterDiv = styled.div`
       to {opacity: 1}
     }
     
+    @media(min-width: 300px) and (max-width: 540px) {
+        margin: 0 70px;
+    }
+    
     
 `;
 export const Title = styled.span`
@@ -51,12 +51,16 @@ export const Content = styled.span`
     line-height: 1.5;
     margin-top: 40px;
 
+    @media(min-width: 300px) and (max-width: 540px) {
+        font-size: 20px;
+    }
 `;
 export const Name = styled.span`
     color: #282828;
     font-size: 22px;
     margin-top: 40px;
     font-weight: bold;
+    text-align: center;
 `;
 export const Enterprise = styled.span`
     color: #777;

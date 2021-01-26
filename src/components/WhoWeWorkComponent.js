@@ -71,7 +71,7 @@ export default () => {
                     </Content>
 
                     <Name>Thomas Jhonson</Name>
-                    <Enterprise>Microsof</Enterprise>
+                    <Enterprise>Microsoft</Enterprise>
                 </CenterDiv>
 
                 <CenterDiv display={content == 3 ? 'flex' : 'none'}>
