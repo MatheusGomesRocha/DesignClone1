@@ -2,6 +2,31 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     font-family: Candara;
+    scroll-behavior: smooth;
+`;
+
+export const ToTopBtn = styled.div`
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: ${props=>props.background};
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: ${props=>props.display};
+    align-items: center;
+    justify-content: center;
+    animation: fade 0.8s;
+  
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1}
+    }
+    
+    :hover {
+        cursor: pointer;
+        transform: rotate(360deg);
+    }
 `;
 
 export const DefaultText = styled.span`

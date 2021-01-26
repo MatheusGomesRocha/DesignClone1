@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FooterComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FooterComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FooterStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FooterStyled.js" afterDir="false" />
     </list>
@@ -75,7 +76,7 @@
       <workItem from="1611574239171" duration="1525000" />
       <workItem from="1611585139098" duration="7886000" />
       <workItem from="1611616275103" duration="4843000" />
-      <workItem from="1611658339979" duration="4204000" />
+      <workItem from="1611658339979" duration="6342000" />
     </task>
     <servers />
   </component>
@@ -99,42 +100,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>60</line>
+          <line>85</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>72</line>
+          <line>97</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>200</line>
+          <line>225</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>106</line>
+          <line>111</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>75</line>
+          <line>100</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>78</line>
+          <line>103</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>92</line>
+          <line>117</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>49</line>
+          <line>74</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -149,7 +150,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
-          <line>142</line>
+          <line>167</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>

@@ -4,6 +4,7 @@ export const MainDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 40px 20px;
     background-color: #222 ;
 `;
@@ -23,6 +24,7 @@ export const BlockDiv = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 20px;
+
 `;
 
 export const Title = styled.span`
@@ -41,10 +43,8 @@ export const Text = styled.span`
 
 export const LinkDiv = styled.div`
     display: flex;
-    width: 100%;
 `;
 export const LinkSide = styled.div`
-    width: 100%;
 `;
 export const LinkItem = styled.div`
     display: flex;

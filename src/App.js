@@ -3,6 +3,7 @@ import {FaCog} from 'react-icons/fa';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {IoIosArrowBack} from 'react-icons/io';
 import {IoIosArrowForward} from 'react-icons/io';
+import {IoIosArrowUp} from 'react-icons/io';
 import {BiCart} from 'react-icons/bi';
 import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
@@ -13,6 +14,8 @@ import FooterComponent from "./components/FooterComponent";
 
 import {
     Container,
+
+    ToTopBtn,
 
     DefaultText,
 
@@ -66,6 +69,8 @@ export default () => {
 
     const [headerShow, setHeaderShow] = useState(false);
 
+    const [toTopBtn, setToTopBtn] = useState(false);
+
     const DefaultBtn = withStyles(() => ({
         root: {
             backgroundColor: defaultColor,
@@ -118,13 +123,32 @@ export default () => {
         }
     }
 
+    const showScrollToTop = () => {
+        if(document.documentElement.scrollTop > 450) {
+            setToTopBtn(true);
+        } else {
+            setToTopBtn(false);
+        }
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
     useEffect(() => {
-        window.onscroll = () => handleScroll();
+        window.onscroll = () => {
+            handleScroll();
+            showScrollToTop();
+        };
     }, [])
 
 
     return (
         <Container>
+
+            <ToTopBtn opacity={toTopBtn ? '1' : '0'} onClick={scrollToTop} display={toTopBtn ? 'flex' : 'none'} background={defaultColor}>
+                <IoIosArrowUp fill={"#fff"} size={25} />
+            </ToTopBtn>
 
             <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}>
                 <HeaderImg background={headerImg ? Pic1 : Pic2}></HeaderImg>

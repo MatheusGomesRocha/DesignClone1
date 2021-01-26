@@ -24,7 +24,7 @@ export default () => {
             backgroundColor: '#46639F',
             color: '#fff',
             height: 45,
-            width: '58%',
+            width: 240,
             borderRadius: 30,
             marginTop: 30,
             fontWeight: 'bold',
@@ -46,7 +46,7 @@ export default () => {
     return (
         <MainDiv>
             <TopDiv>
-                <BlockDiv>
+                <BlockDiv style={{maxWidth: '500px'}}>
                     <Title>About</Title>
                     <Text>
                         Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc
@@ -114,7 +114,7 @@ export default () => {
                     </LinkDiv>
                 </BlockDiv>
 
-                <BlockDiv style={{width: '60%'}}>
+                <BlockDiv>
                     <Title>Contact Us</Title>
                     <Text color={"#fff"}>12345 Little Lonsdale St, Melbourne</Text>
                     <Text color={"#fff"}><span style={{color: '#999'}}>Phone:</span> (12) 12345-6789</Text>
@@ -128,7 +128,7 @@ export default () => {
             <Text>© Copyright 2016 by <a style={{color: '#fff', textDecoration: 'none'}}
                                          href={"http://vasterad.com/themes/sphene/index-corporate.html#"}>Sphene</a>.
                 All Rights Reserved.</Text>
-            <Text>Copied by Matheus Gomes.</Text>
+            <Text style={{marginBottom: 20}}>Copied by Matheus Gomes.</Text>
         </MainDiv>
     );
 }
