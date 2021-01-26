@@ -164,7 +164,11 @@ export const HeaderTop = styled.div`
 export const TopDivHidden = styled.div`
     height: 77px;
     position: relative;
-    display: ${props=>props.display}
+    display: ${props=>props.display};
+    
+    @media(min-width: 300px) and (max-width: 540px) {
+        display: none;
+    }
 `;
 export const HeaderTopLeft = styled.div`
     display: flex;
@@ -238,6 +242,11 @@ export const HeaderBottom = styled.div`
     justify-content: ${props=>props.content};
     position: relative;
     
+    @media(min-width: 300px) and (max-width: 540px) {
+        height: 459px;
+        padding-left: 25px;
+    }
+    
     @media(min-width: 1200px) {
         height: 702px;
         padding-left: ${props=>props.pLeftNote};
@@ -299,6 +308,10 @@ export const HeaderBottomChild = styled.div`
     justify-content: center;
     align-items: ${props=>props.align || 'flex-start'};
     height: 380px;
+    
+    @media(min-width: 300px) and (max-width: 540px) {
+        width: 100%;
+    }
     
     @media(min-width: 1200px) and (max-width: 1800px) {
         width: 70%;

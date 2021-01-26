@@ -10,6 +10,7 @@ export const MainDiv = styled.div`
      @media(min-width: 300px) and (max-width: 540px) {
         flex-direction: column;
         padding: 50px 20px;
+        margin-bottom: 50px;
      }
     
     @media(min-width: 1400px) {
@@ -20,7 +21,6 @@ export const MainDiv = styled.div`
 export const ItemDiv = styled.div`
     display: flex;
     flex-direction: row;
-    
     
      @media(min-width: 300px) and (max-width: 540px) {
         margin-top: 40px;

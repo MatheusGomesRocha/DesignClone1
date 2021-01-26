@@ -50,6 +50,7 @@ import {Button} from '@material-ui/core';
 import {
     withStyles,
 } from '@material-ui/core/styles';
+import {useMediaQuery} from "react-responsive";
 
 export default () => {
     const [colorBtn, setColorBtn] = useState(false);        // 1 - TRUE ou FALSE para saber se vai mostrar as opções para mudar a cor padrão do site
@@ -71,17 +72,21 @@ export default () => {
 
     const [toTopBtn, setToTopBtn] = useState(false);
 
+    const isMobile = useMediaQuery({
+        query: '(max-width: 800px)'
+    });
+
     const DefaultBtn = withStyles(() => ({
         root: {
             backgroundColor: defaultColor,
             color: '#fff',
-            height: 45,
-            width: 130,
+            height: isMobile ? 35 : 45,
+            width: isMobile ? 100 : 130,
             borderRadius: 30,
             marginTop: 10,
             fontWeight: 'bold',
             textDecoration: 'none',
-            fontSize: 12,
+            fontSize: isMobile ? 10 : 12,
             textTransform: 'uppercase',
             transition: '0.4s',
 
@@ -124,7 +129,7 @@ export default () => {
     }
 
     const showScrollToTop = () => {
-        if(document.documentElement.scrollTop > 450) {
+        if (document.documentElement.scrollTop > 450) {
             setToTopBtn(true);
         } else {
             setToTopBtn(false);
@@ -146,27 +151,38 @@ export default () => {
     return (
         <Container>
 
-            <ToTopBtn opacity={toTopBtn ? '1' : '0'} onClick={scrollToTop} display={toTopBtn ? 'flex' : 'none'} background={defaultColor}>
-                <IoIosArrowUp fill={"#fff"} size={25} />
+            <ToTopBtn opacity={toTopBtn ? '1' : '0'} onClick={scrollToTop} display={toTopBtn ? 'flex' : 'none'}
+                      background={defaultColor}>
+                <IoIosArrowUp fill={"#fff"} size={25}/>
             </ToTopBtn>
 
             <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}>
                 <HeaderImg background={headerImg ? Pic1 : Pic2}></HeaderImg>
                 <CarouselArrowLeft onMouseOver={() => setOverLeft(true)} onMouseOut={() => setOverLeft(false)}
                                    bgHover={defaultColor} opacity={arrowVisible}
-                                   style={{borderTopRightRadius: 3, borderBottomRightRadius: 3}}
+                                   style={{
+                                       borderTopRightRadius: 3,
+                                       borderBottomRightRadius: 3,
+                                       display: isMobile ? 'none' : 'flex'
+                                   }}
                                    onClick={() => setHeaderImg(!headerImg)}>
                     <IoIosArrowBack fill={overLeft ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowLeft>
                 <CarouselArrowRight onMouseOver={() => setOverRight(true)} onMouseOut={() => setOverRight(false)}
                                     bgHover={defaultColor} opacity={arrowVisible}
-                                    style={{right: 0, borderTopLeftRadius: 3, borderBottomLeftRadius: 3}}
+                                    style={{
+                                        right: 0,
+                                        borderTopLeftRadius: 3,
+                                        borderBottomLeftRadius: 3,
+                                        display: isMobile ? 'none' : 'flex'
+                                    }}
                                     onClick={() => setHeaderImg(!headerImg)}>
                     <IoIosArrowForward fill={overRight ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowRight>
 
 
-                <HeaderTop height={headerShow ? '66px' : '77px'} background={headerShow ? '#282828' : 'rgba(0, 0, 0, 0.3)'}
+                <HeaderTop height={headerShow ? '66px' : '77px'}
+                           background={headerShow ? '#282828' : 'rgba(0, 0, 0, 0.3)'}
                            position={headerShow ? 'fixed' : 'relative'}>
 
                     <HeaderTopLeft>
@@ -258,10 +274,10 @@ export default () => {
                     <HeaderBottomChild align={headerImg ? 'flex-start' : 'center'}>
                         {headerImg ?
                             <HeaderBottom1>
-                                <DefaultText weight={"700"} font={"31px"} fontBig={"52px"}>
+                                <DefaultText weight={"700"} font={isMobile ? '18px' : '31px'} fontBig={"52px"}>
                                     Strategy Planning
                                 </DefaultText>
-                                <DefaultText color={"#ccc"} font={"17px"} fontBig={"23px"}>
+                                <DefaultText color={"#ccc"} font={isMobile ? '14px' : '17px'} fontBig={"23px"}>
                                     Interactively procrastinate high-payoff content without backward-compatible data.
                                     Quickly cultivate optimal processes and tactical architectures
                                 </DefaultText>
@@ -269,10 +285,12 @@ export default () => {
                             </HeaderBottom1>
                             :
                             <HeaderBottom2>
-                                <DefaultText align={"center"} weight={"700"} font={"31px"} fontBig={"52px"}>
+                                <DefaultText align={"center"} weight={"700"} font={isMobile ? '18px' : '31px'}
+                                             fontBig={"52px"}>
                                     Business Analysis
                                 </DefaultText>
-                                <DefaultText align={"center"} color={"#ccc"} font={"17px"} fontBig={"23px"}>
+                                <DefaultText align={"center"} color={"#ccc"} font={isMobile ? '14px' : '17px'}
+                                             fontBig={"23px"}>
                                     Proactively envisioned multimedia based on expertise cross-media growth strategies.
                                     Pontificate installed based portals after maintainable products.
                                 </DefaultText>
