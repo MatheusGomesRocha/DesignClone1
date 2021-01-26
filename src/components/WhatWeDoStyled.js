@@ -23,7 +23,7 @@ export const ItemDiv = styled.div`
     
     
      @media(min-width: 300px) and (max-width: 540px) {
-        margin-top: 60px;
+        margin-top: 40px;
      }
      
     @media(min-width: 1200px) {

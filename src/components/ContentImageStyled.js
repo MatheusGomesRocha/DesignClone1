@@ -22,9 +22,10 @@ export const SideDiv = styled.div`
     flex-direction: column;
     justify-content: center;
 
-
     @media(min-width: 300px) and (max-width: 540px) {
         width: 100%;
+        padding: 0 25px;
+        height: 550px;
     }
     
     @media(min-width: 1200px) {
@@ -37,8 +38,12 @@ export const Title = styled.span`
     font-size: 35px;
     line-height: 1.5;
     color: ${props=>props.color || '#000'};
-    margin: 0 70px;
     width: 70%;
+    
+    
+    @media(min-width: 300px) and (max-width: 540px) {
+        width: 90%;
+    }
     
     @media(min-width: 1200px) {
         width: 70%;
@@ -60,6 +65,11 @@ export const Content = styled.span`
     width: 70%;
     margin: 20px 70px;
 
+    @media(min-width: 300px) and (max-width: 540px) {
+        width: 90%;
+        margin: 10px 0;
+    }
+    
     @media(min-width: 1200px) {
         width: 60%;
         font-size: 20px;
@@ -80,10 +90,11 @@ export const SideImg = styled.div`
     background-image: url(${props=>props.background});
     background-size: cover;
     background-position: center;
-    
+
     @media(min-width: 300px) and (max-width: 540px) {
         width: 100%;
         display: ${props=>props.display || 'block'};
+        height: 400px;
     }
     
     @media(min-width: 1200px) {
@@ -102,6 +113,7 @@ export const SideImgMobile = styled.div`
     @media(min-width: 300px) and (max-width: 540px) {
         width: 100%;
         display: block;
+        height: 400px;
     }
     
     @media(min-width: 1200px) {

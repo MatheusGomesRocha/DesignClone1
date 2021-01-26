@@ -1,3 +1,5 @@
+import {useState, useEffect} from "react";
+
 import {
     MainDiv,
 
@@ -21,9 +23,29 @@ import Pic3 from '../img/pic3.jpg';
 import Pic4 from '../img/pic4.jpg';
 
 export default (props) => {
+    const [mLeft, setMLeft] = useState(0);
+
     const isLgDesktop = useMediaQuery({
         query: '(min-width: 1800px)'
     });
+
+    const isMobile = useMediaQuery({
+        query: '(max-width: 800px)'
+    });
+
+    const isMdDesktop = useMediaQuery({
+        query: '(min-width: 1200px)'
+    });
+
+    useEffect(() => {
+        if(isLgDesktop) {
+            setMLeft(200);
+        } else if (isMobile) {
+            setMLeft(0);
+        } else if (isMdDesktop) {
+            setMLeft(100);
+        }
+    }, [])
 
     const DefaultBtn = withStyles(() => ({
         root: {
@@ -32,7 +54,8 @@ export default (props) => {
             height: 50,
             width: 150,
             borderRadius: 30,
-            marginLeft: isLgDesktop ? 200 : 100,
+            marginTop: isMobile ? 15 : 0,
+            marginLeft: mLeft,
             fontWeight: 'bold',
             textDecoration: 'none',
             fontSize: 12,
