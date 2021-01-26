@@ -9,6 +9,7 @@ import Pic2 from './img/pic2.jpg';
 import WhatWeDoComponent from "./components/WhatWeDoComponent";
 import ContentImageComponent from "./components/ContentImageComponent";
 import WhoWeWorkComponent from "./components/WhoWeWorkComponent";
+import FooterComponent from "./components/FooterComponent";
 
 import {
     Container,
@@ -265,6 +266,8 @@ export default () => {
             <ContentImageComponent defaultColor={defaultColor}/>
 
             <WhoWeWorkComponent/>
+
+            <FooterComponent/>
         </Container>
     );
 }
