@@ -1,6 +1,7 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FaCog} from 'react-icons/fa';
 import {AiOutlineMenu} from 'react-icons/ai';
+import {AiOutlineClose} from 'react-icons/ai';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {IoIosArrowBack} from 'react-icons/io';
 import {IoIosArrowForward} from 'react-icons/io';
@@ -14,6 +15,20 @@ import WhoWeWorkComponent from "./components/WhoWeWorkComponent";
 import FooterComponent from "./components/FooterComponent";
 
 import {
+    withStyles,
+    makeStyles,
+    useTheme
+} from '@material-ui/core/styles';
+
+import {useMediaQuery} from "react-responsive";
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
+import {
     Container,
 
     ToTopBtn,
@@ -22,6 +37,8 @@ import {
 
     MenuDivMobile,
     MenuBtnMobile,
+    MenuTextMobile,
+    SearchBtnMobile,
 
     ChangeColorDiv,
     ChangeColorDivTop,
@@ -46,15 +63,45 @@ import {
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg, MenuTextMobile, SearchBtnMobile,
+    HeaderImg,
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
 
-import {
-    withStyles,
-} from '@material-ui/core/styles';
-import {useMediaQuery} from "react-responsive";
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+    drawer: {
+        width: drawerWidth,
+        flexShrink: 0,
+        backgroundColor: '#333',
+        color: '#fff',
+    },
+    drawerPaper: {
+        width: drawerWidth,
+        backgroundColor: '#333',
+        color: '#fff',
+    },
+    drawerHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        padding: theme.spacing(0, 1),
+        justifyContent: 'flex-end',
+        backgroundColor: '#333',
+        color: '#fff',
+    },
+    drawerTitle: {
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: '#282828',
+        height: 55,
+    },
+    drawerText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginLeft: 20,
+    }
+}));
 
 export default () => {
     const [colorBtn, setColorBtn] = useState(false);        // 1 - TRUE ou FALSE para saber se vai mostrar as opções para mudar a cor padrão do site
@@ -67,17 +114,30 @@ export default () => {
 
     const [arrowVisible, setArrowVisible] = useState('0');      // 6 - Opacidade dos button para mudar a imagem do header
 
-    const [overSearch, setOverSearch] = useState(false);
-    const [overCart, setOverCart] = useState(false);
-    const [overLeft, setOverLeft] = useState(false);
-    const [overRight, setOverRight] = useState(false);
+    const [overSearch, setOverSearch] = useState(false);        // 7 - Hover do IconSearch para mudar de cor se for tru
+    const [overCart, setOverCart] = useState(false);            // 8 - Hover do IconCart para mudar de cor se for tru
+    const [overLeft, setOverLeft] = useState(false);            // 9 - Hover da ArrowLeft para mudar de cor se for true
+    const [overRight, setOverRight] = useState(false);          // 10 - Hover do ArrowRight para mudar de cor se for tru
 
-    const [headerShow, setHeaderShow] = useState(false);
+    const [headerShow, setHeaderShow] = useState(false);        // 11 - Animação de mostrar o header fixado ao scrollar a página
 
-    const [toTopBtn, setToTopBtn] = useState(false);
+    const [toTopBtn, setToTopBtn] = useState(false);            // 12 - Animação de mostrar o button que retorna a página para o topo
 
-    const isMobile = useMediaQuery({
-        query: '(max-width: 800px)'
+    const [open, setOpen] = useState(false);                    // 13 - Abrir ou fechar drawer menu
+
+    const classes = useStyles();                                         // 14 - Usando classes do Material-ui
+    const theme = useTheme();                                            // 15 - Usando themes do Material-ui
+
+    const handleDrawerOpen = () => {                                     // 16 - Função de abrir Menu
+        setOpen(true);
+    };
+
+    const handleDrawerClose = () => {                                    // 17 - Função de fechar o menu
+        setOpen(false);
+    };
+
+    const isMobile = useMediaQuery({                                     // 18 - Da uma largura para mobile devices
+        query: '(max-width: 750px)'
     });
 
     const DefaultBtn = withStyles(() => ({
@@ -124,7 +184,7 @@ export default () => {
         }, [8000])
     }, [headerImg]);
 
-    const handleScroll = () => {
+    const handleScroll = () => {        // Verifica se o scroll é maior que 80 e mostra o Header fixado
         if (document.documentElement.scrollTop > 80) {
             setHeaderShow(true);
         } else {
@@ -132,7 +192,7 @@ export default () => {
         }
     }
 
-    const showScrollToTop = () => {
+    const showScrollToTop = () => {         // Verifica se o scroll é maior que 450 e mostra o button de voltar para o topo
         if (document.documentElement.scrollTop > 450) {
             setToTopBtn(true);
         } else {
@@ -140,11 +200,11 @@ export default () => {
         }
     }
 
-    const scrollToTop = () => {
+    const scrollToTop = () => {         // Função que volta a página para o topo
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
-    useEffect(() => {
+    useEffect(() => {       // Ao carregar a página já executa as 2 funções para pegar o valor do scroll
         window.onscroll = () => {
             handleScroll();
             showScrollToTop();
@@ -154,6 +214,45 @@ export default () => {
 
     return (
         <Container>
+
+            <Drawer
+                className={classes.drawer}
+                variant="persistent"
+                anchor="left"
+                open={open}
+                classes={{
+                    paper: classes.drawerPaper,
+                }}
+            >
+                <div className={classes.drawerHeader}>
+                    <IconButton onClick={handleDrawerClose}>
+                        <AiOutlineClose fill={"#fff"} size={20}/>
+                    </IconButton>
+                </div>
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Home</span>
+                </div>
+
+                <List>
+                    {['Main Demo', 'Agency Demo', 'Classic Demo', 'Corporate Demo', 'Resume / CV Demo', 'Shop Demo', 'Photography Demo', 'Magazine / Blog Demo'].map((text, index) => (
+                        <ListItem style={{marginTop: 3, paddingLeft: 30}} button key={text}>
+                            <ListItemText primary={text}/>
+                        </ListItem>
+                    ))}
+                </List>
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Portfolio</span>
+                </div>
+                <List>
+                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                        <ListItem button key={text}>
+                            <ListItemText primary={text}/>
+                        </ListItem>
+                    ))}
+                </List>
+            </Drawer>
 
             <ToTopBtn opacity={toTopBtn ? '1' : '0'} onClick={scrollToTop} display={toTopBtn ? 'flex' : 'none'}
                       background={defaultColor}>
@@ -186,8 +285,8 @@ export default () => {
 
 
                 <MenuDivMobile>
-                    <MenuBtnMobile onClick={() => alert('olá mundo')}>
-                        <AiOutlineMenu fill={"#fff"} size={20} />
+                    <MenuBtnMobile onClick={handleDrawerOpen}>
+                        <AiOutlineMenu fill={"#fff"} size={20}/>
                         <MenuTextMobile>Menu</MenuTextMobile>
                     </MenuBtnMobile>
 
@@ -250,7 +349,8 @@ export default () => {
 
                 <TopDivHidden display={headerShow ? 'flex' : 'none'}></TopDivHidden>
 
-                <HeaderBottom pLeftMobile={headerImg ? '25px' : '0'} pLeftNote={headerImg ? '200px' : '0'} pLeft={headerImg ? '300px' : '0'}
+                <HeaderBottom pLeftMobile={headerImg ? '25px' : '0'} pLeftNote={headerImg ? '200px' : '0'}
+                              pLeft={headerImg ? '300px' : '0'}
                               content={headerImg ? 'flex-start' : 'center'}>
                     <ChangeColorDiv style={{left: leftDiv}}>
                         <ChangeColorDivTop>
@@ -318,7 +418,6 @@ export default () => {
 
                 </HeaderBottom>
             </Header>
-
             <WhatWeDoComponent defaultColor={defaultColor}/>
 
             <ContentImageComponent defaultColor={defaultColor}/>
