@@ -234,7 +234,7 @@ export default () => {
 
                 <TopDivHidden display={headerShow ? 'flex' : 'none'}></TopDivHidden>
 
-                <HeaderBottom pLeftNote={headerImg ? '200px' : '0'} pLeft={headerImg ? '300px' : '0'}
+                <HeaderBottom pLeftMobile={headerImg ? '25px' : '0'} pLeftNote={headerImg ? '200px' : '0'} pLeft={headerImg ? '300px' : '0'}
                               content={headerImg ? 'flex-start' : 'center'}>
                     <ChangeColorDiv style={{left: leftDiv}}>
                         <ChangeColorDivTop>

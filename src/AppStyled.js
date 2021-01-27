@@ -38,11 +38,20 @@ export const DefaultText = styled.span`
     text-align: ${props=>props.align || 'left'};
     line-height: 1.8;
 
+    @media(min-width: 300px) and (max-width: 750px) {
+        margin-bottom: 10px;
+    }
+    
     @media(min-width: 1200px) {
         font-size: ${props=>props.fontBig || '25px'};
     }
 `;
 
+export const MenuBtnMobile = styled.div`
+    @media (min-width: 801px) {
+        display: none;
+    }
+`;
 
 export const ChangeColorBtn = styled.div`
     height: 48px;
@@ -59,6 +68,10 @@ export const ChangeColorBtn = styled.div`
 
     :hover {
         cursor: pointer;
+    }
+    
+    @media(min-width: 300px) and (max-width: 750px) {
+        display: none;
     }
 `;
 export const ChangeColorDiv = styled.div`
@@ -134,7 +147,7 @@ export const HeaderImg = styled.div`
     background-image: url(${props=>props.background});
     object-fit: cover;
     
-    @media(min-width: 300px) and (max-width: 540px) {
+    @media(min-width: 300px) and (max-width: 750px) {
     }
     
     @media(min-width: 1200px) {
@@ -157,7 +170,7 @@ export const HeaderTop = styled.div`
     z-index: 999;
     transition: 0.8s;
     
-    @media(min-width: 300px) and (max-width: 540px) {
+    @media(min-width: 300px) and (max-width: 750px) {
         display: none;
     }
 `;
@@ -166,7 +179,7 @@ export const TopDivHidden = styled.div`
     position: relative;
     display: ${props=>props.display};
     
-    @media(min-width: 300px) and (max-width: 540px) {
+    @media(min-width: 300px) and (max-width: 750px) {
         display: none;
     }
 `;
@@ -242,9 +255,9 @@ export const HeaderBottom = styled.div`
     justify-content: ${props=>props.content};
     position: relative;
     
-    @media(min-width: 300px) and (max-width: 540px) {
+    @media(min-width: 300px) and (max-width: 750px) {
         height: 459px;
-        padding-left: 25px;
+        padding-left: ${props=>props.pLeftMobile};
     }
     
     @media(min-width: 1200px) {
@@ -309,8 +322,9 @@ export const HeaderBottomChild = styled.div`
     align-items: ${props=>props.align || 'flex-start'};
     height: 380px;
     
-    @media(min-width: 300px) and (max-width: 540px) {
-        width: 100%;
+    @media(min-width: 300px) and (max-width: 750px) {
+        width: 60%;
+        padding-top: 100px;
     }
     
     @media(min-width: 1200px) and (max-width: 1800px) {

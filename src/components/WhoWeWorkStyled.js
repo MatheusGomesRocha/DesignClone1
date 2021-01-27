@@ -51,7 +51,7 @@ export const Content = styled.span`
     line-height: 1.5;
     margin-top: 40px;
 
-    @media(min-width: 300px) and (max-width: 540px) {
+    @media(min-width: 300px) and (max-width: 750px) {
         font-size: 20px;
     }
 `;
