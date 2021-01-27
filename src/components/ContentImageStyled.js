@@ -42,7 +42,7 @@ export const Title = styled.span`
     
     
     @media(min-width: 300px) and (max-width: 750px) {
-        width: 90%;
+        width: 80%;
     }
     
     @media(min-width: 1200px) {
@@ -66,7 +66,7 @@ export const Content = styled.span`
     margin: 20px 70px;
 
     @media(min-width: 300px) and (max-width: 750px) {
-        width: 90%;
+        width: 80%;
         margin: 10px 0;
     }
     

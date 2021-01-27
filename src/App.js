@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {FaCog} from 'react-icons/fa';
+import {AiOutlineMenu} from 'react-icons/ai';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {IoIosArrowBack} from 'react-icons/io';
 import {IoIosArrowForward} from 'react-icons/io';
@@ -18,6 +19,9 @@ import {
     ToTopBtn,
 
     DefaultText,
+
+    MenuDivMobile,
+    MenuBtnMobile,
 
     ChangeColorDiv,
     ChangeColorDivTop,
@@ -42,7 +46,7 @@ import {
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg,
+    HeaderImg, MenuTextMobile, SearchBtnMobile,
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
@@ -179,6 +183,18 @@ export default () => {
                                     onClick={() => setHeaderImg(!headerImg)}>
                     <IoIosArrowForward fill={overRight ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowRight>
+
+
+                <MenuDivMobile>
+                    <MenuBtnMobile onClick={() => alert('olá mundo')}>
+                        <AiOutlineMenu fill={"#fff"} size={20} />
+                        <MenuTextMobile>Menu</MenuTextMobile>
+                    </MenuBtnMobile>
+
+                    <SearchBtnMobile>
+                        <AiOutlineSearch fill={"#fff"} size={30}/>
+                    </SearchBtnMobile>
+                </MenuDivMobile>
 
 
                 <HeaderTop height={headerShow ? '66px' : '77px'}

@@ -47,10 +47,44 @@ export const DefaultText = styled.span`
     }
 `;
 
-export const MenuBtnMobile = styled.div`
-    @media (min-width: 801px) {
+export const MenuDivMobile = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 90%;
+    border-radius: 5px;
+    background-color: rgba( 255, 255, 255, 0.3);
+    position: absolute;
+    top: 50px;
+
+    @media (min-width: 751px) {
         display: none;
     }
+`;
+export const MenuBtnMobile = styled.div`
+    z-index: 999;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px;
+`;
+export const SearchBtnMobile = styled.div`
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    background-color: rgba( 255, 255, 255, 0.1);
+`;
+export const MenuTextMobile = styled.span`
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase; 
+    margin-left: 10px;
+    font-size: 18px;
 `;
 
 export const ChangeColorBtn = styled.div`
@@ -84,6 +118,10 @@ export const ChangeColorDiv = styled.div`
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     z-index: 999;
+    
+    @media(min-width: 300px) and (max-width: 750px) {
+        display: none;
+    }
 `;
 export const ChangeColorDivTop = styled.div`
     display: flex;
@@ -134,6 +172,10 @@ export const Header = styled.div`
    flex-direction: column;
    justify-content: center;
    position: relative;
+   
+   @media(min-width: 300px) and (max-width: 750px) {
+        align-items: center;
+   }
 `;
 export const HeaderImg = styled.div`
     width: 100%;
