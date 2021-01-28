@@ -55,6 +55,8 @@ import {
     HeaderTopRight,
     HeaderLinkDiv,
     HeaderLink,
+    HoverHeaderLinkHidden,
+    HoverHeaderText,
     Badge,
 
     HeaderBottom,
@@ -83,24 +85,29 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
     },
     drawerHeader: {
+        width: '100%',
         display: 'flex',
         alignItems: 'center',
-        padding: theme.spacing(0, 1),
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
         backgroundColor: '#333',
-        color: '#fff',
+        height: 55
     },
     drawerTitle: {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#282828',
-        height: 55,
     },
     drawerText: {
         fontSize: 18,
         fontWeight: 'bold',
         marginLeft: 20,
-    }
+    },
+    drawerLogoText: {
+        color: '#fff',
+        fontSize: 22,
+        marginLeft: 20,
+        fontWeight: 'bold'
+    },
 }));
 
 export default () => {
@@ -124,6 +131,8 @@ export default () => {
     const [toTopBtn, setToTopBtn] = useState(false);            // 12 - Animação de mostrar o button que retorna a página para o topo
 
     const [open, setOpen] = useState(false);                    // 13 - Abrir ou fechar drawer menu
+
+    const [linkHover1, setLinkHover1] = useState(false);
 
     const classes = useStyles();                                         // 14 - Usando classes do Material-ui
     const theme = useTheme();                                            // 15 - Usando themes do Material-ui
@@ -225,6 +234,7 @@ export default () => {
                 }}
             >
                 <div className={classes.drawerHeader}>
+                    <span className={classes.drawerLogoText}>Sphene</span>
                     <IconButton onClick={handleDrawerClose}>
                         <AiOutlineClose fill={"#fff"} size={20}/>
                     </IconButton>
@@ -245,9 +255,10 @@ export default () => {
                 <div className={classes.drawerTitle}>
                     <span className={classes.drawerText}>Portfolio</span>
                 </div>
+
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
+                    {['Portfolio Style 1', 'AJAX Portfolio', 'Creative Style 1', 'Creative Style 2', 'Classic - Content Right', 'Classic - Content Left', 'Classic - Content Bottom'].map((text, index) => (
+                        <ListItem style={{marginTop: 3, paddingLeft: 30}} button key={text}>
                             <ListItemText primary={text}/>
                         </ListItem>
                     ))}
@@ -306,8 +317,18 @@ export default () => {
 
                     <HeaderTopRight>
 
-                        <HeaderLinkDiv>
+                        <HeaderLinkDiv onMouseOver={() => setLinkHover1(true)} onMouseOut={() => setLinkHover1(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
+                            <HoverHeaderLinkHidden display={linkHover1 ? 'flex' : 'none'}>
+                                <HoverHeaderText>Main Demo</HoverHeaderText>
+                                <HoverHeaderText>Agency Demo</HoverHeaderText>
+                                <HoverHeaderText>Classic Demo</HoverHeaderText>
+                                <HoverHeaderText>Corporate Demo</HoverHeaderText>
+                                <HoverHeaderText>Resume / CV Demo</HoverHeaderText>
+                                <HoverHeaderText>Shop Demo</HoverHeaderText>
+                                <HoverHeaderText>Photography Demo</HoverHeaderText>
+                                <HoverHeaderText>Magazine / Blog Demo</HoverHeaderText>
+                            </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
 
                         <HeaderLinkDiv>

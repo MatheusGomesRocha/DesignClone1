@@ -233,7 +233,7 @@ export const HeaderTopLeft = styled.div`
         padding-left: 200px;
     }
     
-    @media(min-width: 1800px) {
+    @media(min-width: 1600px) {
         padding-left: 300px;
     }
 `;
@@ -245,15 +245,15 @@ export const HeaderTopRight = styled.div`
         padding-right: 200px;
     }
     
-    @media(min-width: 1800px) {
-        padding-right: 300px;
+    @media(min-width: 2000px) {
+        padding-right: 400px;
     }
 `;
 
 export const HeaderLinkDiv = styled.div`
     display: flex;
     align-items: center;
-    
+
    :hover {
         cursor: pointer;
    }
@@ -272,7 +272,32 @@ export const HeaderLink = styled.a`
     :hover {
         color: ${props=>props.color};
     }
+    
+    @media(min-width: 1600px) {
+        font-size: 20px;
+        margin-right: 30px;
+    }
 `;
+export const HoverHeaderLinkHidden = styled.div`
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 10px;
+    background-color: #282828;
+    position: absolute;
+    top: 77px;
+    display: ${props=>props.display};
+    flex-direction: column;
+    width: 200px;
+`;
+export const HoverHeaderText = styled.span`
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    margin-top: 25px;
+    color: #999;
+`;
+
+
 export const Badge = styled.div`
     position: relative;
     top: -10px;
