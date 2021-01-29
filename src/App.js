@@ -57,6 +57,7 @@ import {
     HeaderLink,
     HoverHeaderLinkHidden,
     HoverHeaderText,
+    HoverHeaderColumn,
     Badge,
 
     HeaderBottom,
@@ -65,7 +66,7 @@ import {
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg,
+    HeaderImg, HoverLineDiv, HoverHeaderTitle,
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
@@ -133,6 +134,11 @@ export default () => {
     const [open, setOpen] = useState(false);                    // 13 - Abrir ou fechar drawer menu
 
     const [linkHover1, setLinkHover1] = useState(false);
+    const [linkHover2, setLinkHover2] = useState(false);
+    const [linkHover3, setLinkHover3] = useState(false);
+    const [linkHover4, setLinkHover4] = useState(false);
+    const [linkHover5, setLinkHover5] = useState(false);
+    const [linkHover6, setLinkHover6] = useState(false);
 
     const classes = useStyles();                                         // 14 - Usando classes do Material-ui
     const theme = useTheme();                                            // 15 - Usando themes do Material-ui
@@ -320,35 +326,152 @@ export default () => {
                         <HeaderLinkDiv onMouseOver={() => setLinkHover1(true)} onMouseOut={() => setLinkHover1(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
                             <HoverHeaderLinkHidden display={linkHover1 ? 'flex' : 'none'}>
-                                <HoverHeaderText>Main Demo</HoverHeaderText>
-                                <HoverHeaderText>Agency Demo</HoverHeaderText>
-                                <HoverHeaderText>Classic Demo</HoverHeaderText>
-                                <HoverHeaderText>Corporate Demo</HoverHeaderText>
-                                <HoverHeaderText>Resume / CV Demo</HoverHeaderText>
-                                <HoverHeaderText>Shop Demo</HoverHeaderText>
-                                <HoverHeaderText>Photography Demo</HoverHeaderText>
-                                <HoverHeaderText>Magazine / Blog Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Main Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Agency Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Classic Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Corporate Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Resume / CV Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Shop Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Photography Demo</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Magazine / Blog Demo</HoverHeaderText>
                             </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
 
-                        <HeaderLinkDiv>
+                        <HeaderLinkDiv onMouseOver={() => setLinkHover2(true)} onMouseOut={() => setLinkHover2(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
+                            <HoverHeaderLinkHidden  left={"550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
+                                <HoverHeaderColumn>
+                                    <HoverHeaderTitle>Full-width</HoverHeaderTitle>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 1</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 2</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 3</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 4</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Photo Gallery</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+                                <HoverLineDiv></HoverLineDiv>
+
+                                <HoverHeaderColumn>
+                                    <HoverHeaderTitle>Contained</HoverHeaderTitle>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 1</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 2</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 3</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Portfolio Style 4</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>AJAX Portfolio</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+                                <HoverLineDiv></HoverLineDiv>
+
+                                <HoverHeaderColumn>
+                                    <HoverHeaderTitle>Single Project</HoverHeaderTitle>
+                                    <HoverHeaderText background={defaultColor}>Creative Style 1</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Creative Style 2</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Classic - Content Right</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Classic - Content Left</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Classic - Content Bottom</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+
+                            </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
 
-                        <HeaderLinkDiv>
+                        <HeaderLinkDiv onMouseOver={() => setLinkHover3(true)} onMouseOut={() => setLinkHover3(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
+                            <HoverHeaderLinkHidden  left={"670px"}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
+                                <HoverHeaderColumn>
+                                    <HoverHeaderTitle>Pages</HoverHeaderTitle>
+                                    <HoverHeaderText background={defaultColor}>About Us</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>About Me</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Services Classic</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Services Creative</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Contact Classic</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Contact Creative</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+                                <HoverLineDiv></HoverLineDiv>
+
+                                <HoverHeaderColumn>
+                                    <HoverHeaderTitle>Special Pages</HoverHeaderTitle>
+                                    <HoverHeaderText background={defaultColor}>Coming Soon</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Login & Register</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>404 Not Found</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>FAQ</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+                            </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
 
-                        <HeaderLinkDiv>
+                        <HeaderLinkDiv onMouseOver={() => setLinkHover4(true)} onMouseOut={() => setLinkHover4(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
+                            <HoverHeaderLinkHidden  left={"670px"}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
+                                <HoverHeaderColumn>
+                                    <HoverHeaderText background={defaultColor}>Accordions</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Buttons</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Tabs</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Pricing Tables</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Alerts</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+                                <HoverLineDiv></HoverLineDiv>
+
+                                <HoverHeaderColumn>
+                                    <HoverHeaderText background={defaultColor}>Lists</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Icon Box</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Typography</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Progress Bars</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Carousel Slider</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+                                <HoverLineDiv></HoverLineDiv>
+
+                                <HoverHeaderColumn>
+                                    <HoverHeaderText background={defaultColor}>Call To Action</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Counters</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Testimonials</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Social Icons</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Icons</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+
+                            </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
 
-                        <HeaderLinkDiv>
+                        <HeaderLinkDiv onMouseOver={() => setLinkHover5(true)} onMouseOut={() => setLinkHover5(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
+                            <HoverHeaderLinkHidden display={linkHover5 ? 'flex' : 'none'}>
+                                <HoverHeaderText background={defaultColor}>Shop Right Sidebar</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Shop Left Sidebar</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Shop Full-Width</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Product Page</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Product Categories</HoverHeaderText>
+                                <HoverHeaderText background={defaultColor}>Shopping Cart</HoverHeaderText>
+                            </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
 
-                        <HeaderLinkDiv>
+                        <HeaderLinkDiv onMouseOver={() => setLinkHover6(true)} onMouseOut={() => setLinkHover6(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
+                            <HoverHeaderLinkHidden  left={"870px"}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
+                                <HoverHeaderColumn>
+                                    <HoverHeaderTitle>Full-width</HoverHeaderTitle>
+                                    <HoverHeaderText background={defaultColor}>Three Columns</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Four Columns</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Five Columns</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>With Sidebar</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Single Blog Post</HoverHeaderText>
+                                </HoverHeaderColumn>
+
+                                <HoverLineDiv></HoverLineDiv>
+
+                                <HoverHeaderColumn>
+                                    <HoverHeaderTitle>Contained</HoverHeaderTitle>
+                                    <HoverHeaderText background={defaultColor}>One Columns</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Two Columns</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Three Columns</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Four Columns</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>With Sidebar</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Single Blog Post</HoverHeaderText>                                </HoverHeaderColumn>
+
+                            </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
 
                         <HeaderLinkDiv>

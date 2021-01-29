@@ -24,19 +24,16 @@ export const CenterDiv = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     animation: fade 1s;
   
-    @keyframes fade {
-      from {opacity: 0; transform: translateX(100%);}
-      to {opacity: 1}
-    }
-    
     @media(min-width: 300px) and (max-width: 540px) {
         margin: 0 70px;
     }
     
-    
+    @keyframes fade {
+        from {opacity: 0; transform: translateX(80%);}
+        to {opacity: 1;}
+    }
 `;
 export const Title = styled.span`
     color: #282828;

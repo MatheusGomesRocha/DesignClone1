@@ -253,7 +253,7 @@ export const HeaderTopRight = styled.div`
 export const HeaderLinkDiv = styled.div`
     display: flex;
     align-items: center;
-
+    
    :hover {
         cursor: pointer;
    }
@@ -268,7 +268,11 @@ export const HeaderLink = styled.a`
     text-transform: uppercase;
     margin-right: 25px;
     transition: 0.2s;
-    
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        
     :hover {
         color: ${props=>props.color};
     }
@@ -279,22 +283,50 @@ export const HeaderLink = styled.a`
     }
 `;
 export const HoverHeaderLinkHidden = styled.div`
-    padding-bottom: 25px;
-    padding-left: 20px;
-    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     background-color: #282828;
     position: absolute;
     top: 77px;
+    left: ${props=>props.left || null};
     display: ${props=>props.display};
-    flex-direction: column;
-    width: 200px;
+    flex-direction: ${props=>props.flex || 'column'};
+    min-width: 200px;
+    animation: fadein 0.5s;
+    
+    @keyframes fadein {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
 `;
-export const HoverHeaderText = styled.span`
-    color: #fff;
-    font-size: 20px;
+export const HoverHeaderText = styled.a`
+    font-size: 18px;
     position: relative;
-    margin-top: 25px;
+    padding: 13px 30px 13px 20px;
     color: #999;
+    transition: 0.5s;
+    
+    :hover {
+        color: #fff;
+        background-color: ${props=>props.background};
+    }
+`;
+export const HoverHeaderColumn = styled.a`
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+`;
+export const HoverHeaderTitle = styled.span`
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 10px 15px 20px;
+`;
+export const HoverLineDiv = styled.div`
+    width: 1px;
+    background-color: #777;
+    height: auto;
 `;
 
 
