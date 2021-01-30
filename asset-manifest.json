@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/DesignClone1/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/DesignClone1/static/js/main.0b06e6c0.chunk.js",
-    "main.js.map": "/DesignClone1/static/js/main.0b06e6c0.chunk.js.map",
-    "runtime-main.js": "/DesignClone1/static/js/runtime-main.c933a59d.js",
-    "runtime-main.js.map": "/DesignClone1/static/js/runtime-main.c933a59d.js.map",
-    "static/js/2.b4ba6583.chunk.js": "/DesignClone1/static/js/2.b4ba6583.chunk.js",
-    "static/js/2.b4ba6583.chunk.js.map": "/DesignClone1/static/js/2.b4ba6583.chunk.js.map",
-    "static/js/3.e2f36681.chunk.js": "/DesignClone1/static/js/3.e2f36681.chunk.js",
-    "static/js/3.e2f36681.chunk.js.map": "/DesignClone1/static/js/3.e2f36681.chunk.js.map",
+    "main.js": "/DesignClone1/static/js/main.a74cfecd.chunk.js",
+    "main.js.map": "/DesignClone1/static/js/main.a74cfecd.chunk.js.map",
+    "runtime-main.js": "/DesignClone1/static/js/runtime-main.acdd6f55.js",
+    "runtime-main.js.map": "/DesignClone1/static/js/runtime-main.acdd6f55.js.map",
+    "static/js/2.a94d1861.chunk.js": "/DesignClone1/static/js/2.a94d1861.chunk.js",
+    "static/js/2.a94d1861.chunk.js.map": "/DesignClone1/static/js/2.a94d1861.chunk.js.map",
+    "static/js/3.f216224c.chunk.js": "/DesignClone1/static/js/3.f216224c.chunk.js",
+    "static/js/3.f216224c.chunk.js.map": "/DesignClone1/static/js/3.f216224c.chunk.js.map",
     "index.html": "/DesignClone1/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/DesignClone1/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.b4ba6583.chunk.js.LICENSE.txt": "/DesignClone1/static/js/2.b4ba6583.chunk.js.LICENSE.txt",
+    "static/js/2.a94d1861.chunk.js.LICENSE.txt": "/DesignClone1/static/js/2.a94d1861.chunk.js.LICENSE.txt",
     "static/media/pic1.1386cb66.jpg": "/DesignClone1/static/media/pic1.1386cb66.jpg",
     "static/media/pic2.48a5ecd7.jpg": "/DesignClone1/static/media/pic2.48a5ecd7.jpg",
     "static/media/pic3.f9299244.jpg": "/DesignClone1/static/media/pic3.f9299244.jpg",
     "static/media/pic4.f61fc3e9.jpg": "/DesignClone1/static/media/pic4.f61fc3e9.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c933a59d.js",
-    "static/js/2.b4ba6583.chunk.js",
+    "static/js/runtime-main.acdd6f55.js",
+    "static/js/2.a94d1861.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.0b06e6c0.chunk.js"
+    "static/js/main.a74cfecd.chunk.js"
   ]
 }
