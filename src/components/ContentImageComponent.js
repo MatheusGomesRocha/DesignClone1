@@ -30,7 +30,7 @@ export default (props) => {
     });
 
     const isMobile = useMediaQuery({
-        query: '(max-width: 800px)'
+        query: '(max-width: 799px)'
     });
 
     const isMdDesktop = useMediaQuery({

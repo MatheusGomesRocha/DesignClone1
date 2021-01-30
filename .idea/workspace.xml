@@ -6,7 +6,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WhoWeWorkStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhoWeWorkStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContentImageComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContentImageStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentImageStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FooterStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FooterStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +85,8 @@
       <workItem from="1611747451539" duration="5891000" />
       <workItem from="1611862181928" duration="2539000" />
       <workItem from="1611923050293" duration="1647000" />
-      <workItem from="1611938037703" duration="3604000" />
+      <workItem from="1611938037703" duration="3759000" />
+      <workItem from="1611972866788" duration="849000" />
     </task>
     <servers />
   </component>
@@ -182,7 +186,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/AppStyled.js</url>
           <line>297</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>

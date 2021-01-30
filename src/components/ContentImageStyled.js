@@ -10,7 +10,7 @@ export const RowDiv = styled.div`
     display: flex;
     background-color: ${props=>props.background || '#eee'};
 
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         flex-direction: column;
     }
 `;
@@ -22,7 +22,7 @@ export const SideDiv = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         width: 100%;
         padding: 0 25px;
         height: 550px;
@@ -41,7 +41,7 @@ export const Title = styled.span`
     width: 70%;
     
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         width: 80%;
     }
     
@@ -65,7 +65,7 @@ export const Content = styled.span`
     width: 70%;
     margin: 20px 70px;
 
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         width: 80%;
         margin: 10px 0;
     }
@@ -91,7 +91,7 @@ export const SideImg = styled.div`
     background-size: cover;
     background-position: center;
 
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         width: 100%;
         display: ${props=>props.display || 'block'};
         height: 400px;
@@ -110,7 +110,7 @@ export const SideImgMobile = styled.div`
     background-position: center;
     display: none;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         width: 100%;
         display: block;
         height: 400px;

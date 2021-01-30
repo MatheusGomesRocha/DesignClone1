@@ -8,7 +8,7 @@ export const MainDiv = styled.div`
     padding: 40px 20px;
     background-color: #222;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         padding: 20px 10px;
     }
 `;
@@ -17,7 +17,7 @@ export const TopDiv = styled.div`
     display: flex;
     justify-content: space-around;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         flex-direction: column;
     }
 `;
@@ -27,7 +27,7 @@ export const LineDiv = styled.div`
     background-color: #555;
     margin: 50px 0;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         width: 90%;
         background-color: #555;
         margin: 30px 0;
@@ -39,7 +39,7 @@ export const BlockDiv = styled.div`
     flex-direction: column;
     margin: 0 20px;
 
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         margin-top: 50px;
     }
 `;

@@ -38,7 +38,7 @@ export const DefaultText = styled.span`
     text-align: ${props=>props.align || 'left'};
     line-height: 1.8;
 
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         margin-bottom: 10px;
     }
     
@@ -58,7 +58,7 @@ export const MenuDivMobile = styled.div`
     position: absolute;
     top: 50px;
 
-    @media (min-width: 751px) {
+    @media (min-width: 800px) {
         display: none;
     }
 `;
@@ -104,7 +104,7 @@ export const ChangeColorBtn = styled.div`
         cursor: pointer;
     }
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         display: none;
     }
 `;
@@ -119,7 +119,7 @@ export const ChangeColorDiv = styled.div`
     border-bottom-right-radius: 5px;
     z-index: 999;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         display: none;
     }
 `;
@@ -173,7 +173,7 @@ export const Header = styled.div`
    justify-content: center;
    position: relative;
    
-   @media(min-width: 300px) and (max-width: 750px) {
+   @media(min-width: 300px) and (max-width: 799px) {
         align-items: center;
    }
 `;
@@ -189,7 +189,7 @@ export const HeaderImg = styled.div`
     background-image: url(${props=>props.background});
     object-fit: cover;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
     }
     
     @media(min-width: 1200px) {
@@ -212,7 +212,7 @@ export const HeaderTop = styled.div`
     z-index: 999;
     transition: 0.8s;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         display: none;
     }
 `;
@@ -221,7 +221,7 @@ export const TopDivHidden = styled.div`
     position: relative;
     display: ${props=>props.display};
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         display: none;
     }
 `;
@@ -354,7 +354,7 @@ export const HeaderBottom = styled.div`
     justify-content: ${props=>props.content};
     position: relative;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         height: 459px;
         padding-left: ${props=>props.pLeftMobile};
     }
@@ -421,7 +421,7 @@ export const HeaderBottomChild = styled.div`
     align-items: ${props=>props.align || 'flex-start'};
     height: 380px;
     
-    @media(min-width: 300px) and (max-width: 750px) {
+    @media(min-width: 300px) and (max-width: 799px) {
         width: 60%;
         padding-top: 100px;
     }

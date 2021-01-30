@@ -152,7 +152,7 @@ export default () => {
     };
 
     const isMobile = useMediaQuery({                                     // 18 - Da uma largura para mobile devices
-        query: '(max-width: 750px)'
+        query: '(max-width: 799px)'
     });
 
     const DefaultBtn = withStyles(() => ({

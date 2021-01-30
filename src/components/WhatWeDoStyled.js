@@ -7,9 +7,9 @@ export const MainDiv = styled.div`
     justify-content: center;
     align-item: center;
 
-     @media(min-width: 300px) and (max-width: 750px) {
+     @media(min-width: 300px) and (max-width: 799px) {
         flex-direction: column;
-        padding: 50px 20px;
+        padding: 40px 50px;
         margin-bottom: 50px;
      }
     
@@ -22,8 +22,8 @@ export const ItemDiv = styled.div`
     display: flex;
     flex-direction: row;
     
-     @media(min-width: 300px) and (max-width: 750px) {
-        margin-top: 40px;
+     @media(min-width: 300px) and (max-width: 799px) {
+        margin-top: 60px;
      }
      
     @media(min-width: 1200px) {
