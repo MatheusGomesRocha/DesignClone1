@@ -24,13 +24,13 @@ export const CenterDiv = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: fade 1s;
+    animation: fadeFromRight 1s;
   
     @media(min-width: 300px) and (max-width: 540px) {
         margin: 0 70px;
     }
     
-    @keyframes fade {
+    @keyframes fadeFromRight {
         from {opacity: 0; transform: translateX(80%);}
         to {opacity: 1;}
     }
