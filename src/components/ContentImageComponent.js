@@ -25,16 +25,20 @@ import Pic4 from '../img/pic4.jpg';
 export default (props) => {
     const [mLeft, setMLeft] = useState(0);
 
-    const isLgDesktop = useMediaQuery({
-        query: '(min-width: 1800px)'
-    });
-
     const isMobile = useMediaQuery({
         query: '(max-width: 799px)'
     });
 
+    const isMdDevice = useMediaQuery({
+        query: '(max-width: 1199px)'
+    });
+
     const isMdDesktop = useMediaQuery({
         query: '(min-width: 1200px)'
+    });
+
+    const isLgDesktop = useMediaQuery({
+        query: '(min-width: 1800px)'
     });
 
     useEffect(() => {
@@ -44,6 +48,8 @@ export default (props) => {
             setMLeft(25);
         } else if (isMdDesktop) {
             setMLeft(100);
+        } else if (isMdDevice) {
+            setMLeft(70);
         }
     }, [])
 

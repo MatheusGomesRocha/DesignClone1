@@ -38,7 +38,7 @@ export const Title = styled.span`
     line-height: 1.5;
     color: ${props=>props.color || '#000'};
     width: 70%;
-    
+    margin: 0 70px;
     
     @media(min-width: 300px) and (max-width: 799px) {
         width: 80%;

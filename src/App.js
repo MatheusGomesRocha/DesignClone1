@@ -91,20 +91,24 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: '#333',
-        height: 55
+        padding: '15px 0',
     },
     drawerTitle: {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#282828',
+        padding: '14px 0',
+        color: '#ddd',
+        borderTop: '1px solid #777'
     },
     drawerText: {
         fontSize: 18,
         fontWeight: 'bold',
         marginLeft: 20,
+        color: '#ddd',
     },
     drawerLogoText: {
-        color: '#fff',
+        color: '#ddd',
         fontSize: 22,
         marginLeft: 20,
         fontWeight: 'bold'
@@ -239,9 +243,9 @@ export default () => {
                     paper: classes.drawerPaper,
                 }}
             >
-                <div className={classes.drawerHeader}>
+                <div onClick={handleDrawerClose} className={classes.drawerHeader}>
                     <span className={classes.drawerLogoText}>Sphene</span>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton>
                         <AiOutlineClose fill={"#fff"} size={20}/>
                     </IconButton>
                 </div>
@@ -249,26 +253,90 @@ export default () => {
                 <div className={classes.drawerTitle}>
                     <span className={classes.drawerText}>Home</span>
                 </div>
-
-                <List>
+                <div>
                     {['Main Demo', 'Agency Demo', 'Classic Demo', 'Corporate Demo', 'Resume / CV Demo', 'Shop Demo', 'Photography Demo', 'Magazine / Blog Demo'].map((text, index) => (
-                        <ListItem style={{marginTop: 3, paddingLeft: 30}} button key={text}>
-                            <ListItemText primary={text}/>
-                        </ListItem>
+                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
+                            <ListItemText style={{color: '#ddd'}} primary={text}/>
+                        </div>
                     ))}
-                </List>
+                </div>
+
 
                 <div className={classes.drawerTitle}>
                     <span className={classes.drawerText}>Portfolio</span>
                 </div>
-
-                <List>
+                <div>
                     {['Portfolio Style 1', 'AJAX Portfolio', 'Creative Style 1', 'Creative Style 2', 'Classic - Content Right', 'Classic - Content Left', 'Classic - Content Bottom'].map((text, index) => (
-                        <ListItem style={{marginTop: 3, paddingLeft: 30}} button key={text}>
+                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
                             <ListItemText primary={text}/>
-                        </ListItem>
+                        </div>
                     ))}
-                </List>
+                </div>
+
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Portfolio</span>
+                </div>
+                <div>
+                    {['Portfolio Style 1', 'Portfolio Style 2', 'Portfolio Style 3', 'Portfolio Style 4', 'Photo Gallery', 'AJAX Portfolio', 'Creative Style 1', 'Creative Style 2', 'Classic - Content Right', 'Classic - Content Left', 'Classic - Content Bottom'].map((text, index) => (
+                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
+                            <ListItemText primary={text}/>
+                        </div>
+                    ))}
+                </div>
+
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Pages</span>
+                </div>
+                <div>
+                    {['About Us', 'About Me', 'Services Classic-', 'Services Creative', 'Contact Classic', 'Contact Creative', 'Coming Soon', 'Login & Register', '404 Not Found', 'FAQ'].map((text, index) => (
+                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
+                            <ListItemText primary={text}/>
+                        </div>
+                    ))}
+                </div>
+
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Elements</span>
+                </div>
+                <div>
+                    {['Accordions', 'Buttons', 'Tabs0', 'Pricing Tables', 'Alerts', 'Lists', 'Icon Boxes', 'Typography', 'Progress Bars', 'Carousel Slider', 'Call To Action', 'Counters', 'Testimonials', 'Social Icons', 'Icons'].map((text, index) => (
+                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
+                            <ListItemText primary={text}/>
+                        </div>
+                    ))}
+                </div>
+
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Shop</span>
+                </div>
+                <div>
+                    {['Shop Right Sidebar', 'Shop Left Sidebar', 'Shop Full-Width', 'Product Page', 'Product Categories', 'Shopping Cart'].map((text, index) => (
+                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
+                            <ListItemText primary={text}/>
+                        </div>
+                    ))}
+                </div>
+
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Blog</span>
+                </div>
+                <div>
+                    {['One Columns', 'Two Columns', 'Three Columns', 'Four Columns', 'Five Columns', 'With Sidebar', 'Single Blog Post'].map((text, index) => (
+                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
+                            <ListItemText primary={text}/>
+                        </div>
+                    ))}
+                </div>
+
+
+                <div className={classes.drawerTitle}>
+                    <span className={classes.drawerText}>Contact</span>
+                </div>
             </Drawer>
 
             <ToTopBtn opacity={toTopBtn ? '1' : '0'} onClick={scrollToTop} display={toTopBtn ? 'flex' : 'none'}
