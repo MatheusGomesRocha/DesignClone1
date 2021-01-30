@@ -287,7 +287,7 @@ export const HoverHeaderLinkHidden = styled.div`
     padding-top: 15px;
     background-color: #282828;
     position: absolute;
-    top: 77px;
+    top: ${props=>props.top};
     left: ${props=>props.left || null};
     display: ${props=>props.display};
     flex-direction: ${props=>props.flex || 'column'};

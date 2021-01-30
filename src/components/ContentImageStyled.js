@@ -24,7 +24,6 @@ export const SideDiv = styled.div`
 
     @media(min-width: 300px) and (max-width: 799px) {
         width: 100%;
-        padding: 0 25px;
         height: 550px;
     }
     
@@ -43,6 +42,7 @@ export const Title = styled.span`
     
     @media(min-width: 300px) and (max-width: 799px) {
         width: 80%;
+        margin: 0 25px;
     }
     
     @media(min-width: 1200px) {
@@ -67,7 +67,7 @@ export const Content = styled.span`
 
     @media(min-width: 300px) and (max-width: 799px) {
         width: 80%;
-        margin: 10px 0;
+        margin: 10px 25px;
     }
     
     @media(min-width: 1200px) {

@@ -41,7 +41,7 @@ export default (props) => {
         if(isLgDesktop) {
             setMLeft(200);
         } else if (isMobile) {
-            setMLeft(0);
+            setMLeft(25);
         } else if (isMdDesktop) {
             setMLeft(100);
         }

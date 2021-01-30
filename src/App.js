@@ -325,7 +325,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover1(true)} onMouseOut={() => setLinkHover1(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
-                            <HoverHeaderLinkHidden display={linkHover1 ? 'flex' : 'none'}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} display={linkHover1 ? 'flex' : 'none'}>
                                 <HoverHeaderText background={defaultColor}>Main Demo</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Agency Demo</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Classic Demo</HoverHeaderText>
@@ -339,7 +339,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover2(true)} onMouseOut={() => setLinkHover2(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
-                            <HoverHeaderLinkHidden  left={"550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Portfolio Style 1</HoverHeaderText>
@@ -377,7 +377,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover3(true)} onMouseOut={() => setLinkHover3(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
-                            <HoverHeaderLinkHidden  left={"670px"}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"670px"}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Pages</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>About Us</HoverHeaderText>
@@ -403,7 +403,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover4(true)} onMouseOut={() => setLinkHover4(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
-                            <HoverHeaderLinkHidden  left={"670px"}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"670px"}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderText background={defaultColor}>Accordions</HoverHeaderText>
                                     <HoverHeaderText background={defaultColor}>Buttons</HoverHeaderText>
@@ -438,7 +438,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover5(true)} onMouseOut={() => setLinkHover5(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
-                            <HoverHeaderLinkHidden display={linkHover5 ? 'flex' : 'none'}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} display={linkHover5 ? 'flex' : 'none'}>
                                 <HoverHeaderText background={defaultColor}>Shop Right Sidebar</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Shop Left Sidebar</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Shop Full-Width</HoverHeaderText>
@@ -450,7 +450,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover6(true)} onMouseOut={() => setLinkHover6(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
-                            <HoverHeaderLinkHidden  left={"870px"}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"870px"}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Three Columns</HoverHeaderText>
