@@ -316,6 +316,11 @@ export const HoverHeaderColumn = styled.a`
     flex-direction: column;
     min-width: 200px;
 `;
+export const HoverHeaderRowIcon = styled.div`
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+`;
 export const HoverHeaderTitle = styled.span`
     color: #fff;
     font-size: 18px;

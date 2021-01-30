@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {FaCog} from 'react-icons/fa';
-import {AiOutlineMenu} from 'react-icons/ai';
-import {AiOutlineClose} from 'react-icons/ai';
-import {AiOutlineSearch} from 'react-icons/ai';
-import {IoIosArrowBack} from 'react-icons/io';
-import {IoIosArrowForward} from 'react-icons/io';
-import {IoIosArrowUp} from 'react-icons/io';
-import {BiCart} from 'react-icons/bi';
+import {AiOutlineMenu, AiOutlineSearch, AiOutlineClose, AiFillPushpin} from 'react-icons/ai';
+import {IoIosArrowBack, IoIosArrowForward, IoIosArrowUp} from 'react-icons/io';
+import {BiCart, BiShareAlt} from 'react-icons/bi';
+import {FiSend, FiMenu, FiBell, FiLayers} from 'react-icons/fi';
+import {GoFileDirectory, GoBook} from 'react-icons/go';
+import {BsLightning} from 'react-icons/bs';
+import {FaMedal, FaRegImage} from 'react-icons/fa';
+import {GrBarChart, GrDiamond} from 'react-icons/gr';
+import {TiMessages} from 'react-icons/ti';
 import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
 import WhatWeDoComponent from "./components/WhatWeDoComponent";
@@ -66,7 +68,7 @@ import {
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg, HoverLineDiv, HoverHeaderTitle,
+    HeaderImg, HoverLineDiv, HoverHeaderTitle, HoverHeaderRowIcon,
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
@@ -159,6 +161,10 @@ export default () => {
         query: '(max-width: 799px)'
     });
 
+    const isMdDevice = useMediaQuery({
+        query: '(max-width: 1199px)'
+    })
+
     const DefaultBtn = withStyles(() => ({
         root: {
             backgroundColor: defaultColor,
@@ -200,7 +206,7 @@ export default () => {
     useEffect(() => {               // Um hook do React para trocar a imagem do header a cada 8 segundos
         setTimeout(() => {
             setHeaderImg(!headerImg);
-        }, [8000])
+        }, [7000])
     }, [headerImg]);
 
     const handleScroll = () => {        // Verifica se o scroll é maior que 80 e mostra o Header fixado
@@ -275,18 +281,6 @@ export default () => {
 
 
                 <div className={classes.drawerTitle}>
-                    <span className={classes.drawerText}>Portfolio</span>
-                </div>
-                <div>
-                    {['Portfolio Style 1', 'Portfolio Style 2', 'Portfolio Style 3', 'Portfolio Style 4', 'Photo Gallery', 'AJAX Portfolio', 'Creative Style 1', 'Creative Style 2', 'Classic - Content Right', 'Classic - Content Left', 'Classic - Content Bottom'].map((text, index) => (
-                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
-                            <ListItemText primary={text}/>
-                        </div>
-                    ))}
-                </div>
-
-
-                <div className={classes.drawerTitle}>
                     <span className={classes.drawerText}>Pages</span>
                 </div>
                 <div>
@@ -298,11 +292,12 @@ export default () => {
                 </div>
 
 
+
                 <div className={classes.drawerTitle}>
                     <span className={classes.drawerText}>Elements</span>
                 </div>
                 <div>
-                    {['Accordions', 'Buttons', 'Tabs0', 'Pricing Tables', 'Alerts', 'Lists', 'Icon Boxes', 'Typography', 'Progress Bars', 'Carousel Slider', 'Call To Action', 'Counters', 'Testimonials', 'Social Icons', 'Icons'].map((text, index) => (
+                    {['Accordions', 'Buttons', 'Tabs', 'Pricing Tables', 'Alerts', 'Lists', 'Icon Boxes', 'Typography', 'Progress Bars', 'Carousel Slider', 'Call To Action', 'Counters', 'Testimonials', 'Social Icons', 'Icons'].map((text, index) => (
                         <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
                             <ListItemText primary={text}/>
                         </div>
@@ -407,7 +402,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover2(true)} onMouseOut={() => setLinkHover2(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '200px' : "550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Portfolio Style 1</HoverHeaderText>
@@ -445,7 +440,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover3(true)} onMouseOut={() => setLinkHover3(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"670px"}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '350px' : '670px'}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Pages</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>About Us</HoverHeaderText>
@@ -470,11 +465,17 @@ export default () => {
                         </HeaderLinkDiv>
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover4(true)} onMouseOut={() => setLinkHover4(false)}>
-                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>elements</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"670px"}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
+                            <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Elements</HeaderLink>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '350px' : '670px'}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
-                                    <HoverHeaderText background={defaultColor}>Accordions</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Buttons</HoverHeaderText>
+                                    <HoverHeaderRowIcon>
+                                        <FiLayers fill={"#999"} size={22} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Accordions</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+                                    <HoverHeaderRowIcon>
+                                        <FiSend fill={"#999"} size={22} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Buttons</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
                                     <HoverHeaderText background={defaultColor}>Tabs</HoverHeaderText>
                                     <HoverHeaderText background={defaultColor}>Pricing Tables</HoverHeaderText>
                                     <HoverHeaderText background={defaultColor}>Alerts</HoverHeaderText>
@@ -518,7 +519,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover6(true)} onMouseOut={() => setLinkHover6(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={"870px"}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '550px' : '870px'}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Three Columns</HoverHeaderText>
