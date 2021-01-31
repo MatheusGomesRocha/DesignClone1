@@ -9,11 +9,11 @@ export const ToTopBtn = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: ${props=>props.background};
+    background-color: ${props => props.background};
     position: fixed;
     bottom: 40px;
     right: 40px;
-    display: ${props=>props.display};
+    display: ${props => props.display};
     align-items: center;
     justify-content: center;
     animation: fade 0.8s;
@@ -30,12 +30,12 @@ export const ToTopBtn = styled.div`
 `;
 
 export const DefaultText = styled.span`
-    color: ${props=>props.color || '#fff'};
+    color: ${props => props.color || '#fff'};
     width: 100%;
     font-weight: ${props => props.weight || 'normal'};
     font-size: ${props => props.font || '14px'};
     margin-bottom: 20px;
-    text-align: ${props=>props.align || 'left'};
+    text-align: ${props => props.align || 'left'};
     line-height: 1.8;
 
     @media(min-width: 300px) and (max-width: 799px) {
@@ -43,24 +43,34 @@ export const DefaultText = styled.span`
     }
     
     @media(min-width: 1200px) {
-        font-size: ${props=>props.fontBig || '25px'};
+        font-size: ${props => props.fontBig || '25px'};
     }
 `;
 
 export const MenuDivMobile = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
     width: 90%;
     border-radius: 5px;
     background-color: rgba( 255, 255, 255, 0.3);
     position: absolute;
-    top: 50px;
+    top: 30px;
+    z-index: 999;
 
     @media (min-width: 800px) {
         display: none;
     }
+`;
+export const MenuDivMobileRow = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.1);
+
 `;
 export const MenuBtnMobile = styled.div`
     z-index: 999;
@@ -69,6 +79,13 @@ export const MenuBtnMobile = styled.div`
     align-items: center;
     height: 60px;
     padding-left: 20px;
+`;
+export const MenuTextMobile = styled.span`
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase; 
+    margin-left: 10px;
+    font-size: 18px;
 `;
 export const SearchBtnMobile = styled.div`
     z-index: 999;
@@ -79,13 +96,33 @@ export const SearchBtnMobile = styled.div`
     width: 60px;
     background-color: rgba( 255, 255, 255, 0.1);
 `;
-export const MenuTextMobile = styled.span`
+export const InputSearch = styled.textarea`
+    display: ${props => props.display};
+    background-color: transparent;
+    width: 100%;
+    animation: fade2 250ms;
+    border: none;
     color: #fff;
+    font-size: 20px;
     font-weight: bold;
-    text-transform: uppercase; 
-    margin-left: 10px;
-    font-size: 18px;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    
+    ::placeholder {
+        color: #ddd;
+    }
+    
+    :focus {
+        outline: 0;    
+    }
+    
+    @keyframes fade2 {
+        from {height: 0;}
+        to {height: 50px;}
+    }
 `;
+
 
 export const ChangeColorBtn = styled.div`
     height: 48px;
@@ -186,7 +223,7 @@ export const HeaderImg = styled.div`
     transition: all 2s ease;
     background-size: cover;
     background-position: center;
-    background-image: url(${props=>props.background});
+    background-image: url(${props => props.background});
     object-fit: cover;
     
     @media(min-width: 300px) and (max-width: 799px) {
@@ -199,16 +236,16 @@ export const HeaderImg = styled.div`
 
 
 export const HeaderTop = styled.div`
-    height: ${props=>props.height};
+    height: ${props => props.height};
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #777;
-    position: ${props=>props.position};
+    position: ${props => props.position};
     top: 0;
-    background-color: ${props=>props.background};
+    background-color: ${props => props.background};
     z-index: 999;
     transition: 0.8s;
     
@@ -219,7 +256,7 @@ export const HeaderTop = styled.div`
 export const TopDivHidden = styled.div`
     height: 77px;
     position: relative;
-    display: ${props=>props.display};
+    display: ${props => props.display};
     
     @media(min-width: 300px) and (max-width: 799px) {
         display: none;
@@ -274,7 +311,7 @@ export const HeaderLink = styled.a`
     justify-content: center;
         
     :hover {
-        color: ${props=>props.color};
+        color: ${props => props.color};
     }
     
     @media(min-width: 1600px) {
@@ -287,10 +324,10 @@ export const HoverHeaderLinkHidden = styled.div`
     padding-top: 15px;
     background-color: #282828;
     position: absolute;
-    top: ${props=>props.top};
-    left: ${props=>props.left || null};
-    display: ${props=>props.display};
-    flex-direction: ${props=>props.flex || 'column'};
+    top: ${props => props.top};
+    left: ${props => props.left || null};
+    display: ${props => props.display};
+    flex-direction: ${props => props.flex || 'column'};
     min-width: 200px;
     animation: fadein 0.5s;
     
@@ -300,7 +337,7 @@ export const HoverHeaderLinkHidden = styled.div`
     }
     
     @media(min-width: 2000px) {
-        left: ${props=>props.leftBig};
+        left: ${props => props.leftBig};
     }
 `;
 export const HoverHeaderText = styled.a`
@@ -312,7 +349,7 @@ export const HoverHeaderText = styled.a`
          
     :hover {
         color: #fff;
-        background-color: ${props=>props.background};
+        background-color: ${props => props.background};
     }
 `;
 export const HoverHeaderColumn = styled.a`
@@ -328,7 +365,7 @@ export const HoverHeaderRowIcon = styled.div`
     transition: 250ms;
 
     :hover {
-        background-color: ${props=>props.background};
+        background-color: ${props => props.background};
     }
 `;
 export const HoverHeaderTitle = styled.span`
@@ -352,7 +389,7 @@ export const Badge = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: ${props=>props.background};
+    background-color: ${props => props.background};
     color: #fff;
     display: flex;
     align-items: center;
@@ -366,21 +403,21 @@ export const HeaderBottom = styled.div`
     padding-left: 80px;
     display: flex;
     align-items: center;
-    justify-content: ${props=>props.content};
+    justify-content: ${props => props.content};
     position: relative;
     
     @media(min-width: 300px) and (max-width: 799px) {
         height: 459px;
-        padding-left: ${props=>props.pLeftMobile};
+        padding-left: ${props => props.pLeftMobile};
     }
     
     @media(min-width: 1200px) {
         height: 702px;
-        padding-left: ${props=>props.pLeftNote};
+        padding-left: ${props => props.pLeftNote};
     }
     
     @media(min-width: 1800px) {
-        padding-left: ${props=>props.pLeft};
+        padding-left: ${props => props.pLeft};
     }
 `;
 // Contém Animação que preenche o background-color da esquerda para a direita ao realizar um hover
@@ -395,7 +432,7 @@ export const CarouselArrowLeft = styled.div`
     justify-content: center;
     transition: 0.5s;
     opacity: ${props => props.opacity};
-    background: linear-gradient( to left, #fff 50%, ${props=>props.bgHover} 50% );
+    background: linear-gradient( to left, #fff 50%, ${props => props.bgHover} 50% );
     background-size: 200% 100%;
     background-position: right bottom;
     
@@ -418,7 +455,7 @@ export const CarouselArrowRight = styled.div`
     justify-content: center;
     transition: 0.5s;
     opacity: ${props => props.opacity};
-    background: linear-gradient( to right, #fff 50%, ${props=>props.bgHover} 50% );
+    background: linear-gradient( to right, #fff 50%, ${props => props.bgHover} 50% );
     background-size: 200% 100%;
     background-position: left bottom;
     
@@ -433,7 +470,7 @@ export const HeaderBottomChild = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: ${props=>props.align || 'flex-start'};
+    align-items: ${props => props.align || 'flex-start'};
     height: 380px;
     
     @media(min-width: 300px) and (max-width: 799px) {
@@ -457,6 +494,10 @@ export const HeaderBottom1 = styled.div`
         to {opacity: 1;}
     }
     
+    @media(min-width: 300px) and (max-width: 799px) {
+        margin-top: 50px;
+    }
+    
     @media(min-width: 1200px) {
         width: 70%;
     }
@@ -473,6 +514,10 @@ export const HeaderBottom2 = styled.div`
     @keyframes fadein {
         from {opacity: 0; transform: translateY(20%);}
         to {opacity: 1;}
+    }
+    
+     @media(min-width: 300px) and (max-width: 799px) {
+        margin-top: 50px;
     }
 
     @media(min-width: 1200px) {

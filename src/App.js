@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {FaCog} from 'react-icons/fa';
+import {FaCog} from 'react-icons/fa';       // Button ChangeColor
 import {AiOutlineMenu, AiOutlineSearch, AiOutlineClose} from 'react-icons/ai';   // Menu Mobile Open, Button Search, Menu Mobile Close
-import {IoIosArrowBack, IoIosArrowForward, IoIosArrowUp} from 'react-icons/io';
+import {IoIosArrowBack, IoIosArrowForward, IoIosArrowUp} from 'react-icons/io';     // Back Image, Foward Image, BackToTop Button
 
 // Submenu ELEMENTS - START
 
@@ -16,8 +16,9 @@ import {RiBarChartFill, RiVipDiamondFill} from 'react-icons/ri';    // Counters,
 
 // Submenu ELEMENTS - FINISH
 
-import Pic1 from './img/pic1.jpg';
-import Pic2 from './img/pic2.jpg';
+import Pic1 from './img/pic1.jpg';      // Image 1 Header
+import Pic2 from './img/pic2.jpg';      // Image 2 Header
+
 import WhatWeDoComponent from "./components/WhatWeDoComponent";
 import ContentImageComponent from "./components/ContentImageComponent";
 import WhoWeWorkComponent from "./components/WhoWeWorkComponent";
@@ -33,6 +34,7 @@ import {useMediaQuery} from "react-responsive";
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import ListItemText from '@material-ui/core/ListItemText';
+import TextField from '@material-ui/core/TextField';
 
 import {
     Container,
@@ -42,9 +44,11 @@ import {
     DefaultText,
 
     MenuDivMobile,
+    MenuDivMobileRow,
     MenuBtnMobile,
     MenuTextMobile,
     SearchBtnMobile,
+    InputSearch,
 
     ChangeColorDiv,
     ChangeColorDivTop,
@@ -61,6 +65,9 @@ import {
     HeaderTopRight,
     HeaderLinkDiv,
     HeaderLink,
+    HoverHeaderRowIcon,
+    HoverHeaderTitle,
+    HoverLineDiv,
     HoverHeaderLinkHidden,
     HoverHeaderText,
     HoverHeaderColumn,
@@ -72,14 +79,14 @@ import {
     HeaderBottomChild,
     HeaderBottom1,
     HeaderBottom2,
-    HeaderImg, HoverLineDiv, HoverHeaderTitle, HoverHeaderRowIcon,
+    HeaderImg,
 } from './AppStyled';
 
 import {Button} from '@material-ui/core';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({      // Drawer - Menu Mobile
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
@@ -143,12 +150,15 @@ export default () => {
 
     const [open, setOpen] = useState(false);                    // 13 - Abrir ou fechar drawer menu
 
-    const [linkHover1, setLinkHover1] = useState(false);
-    const [linkHover2, setLinkHover2] = useState(false);
-    const [linkHover3, setLinkHover3] = useState(false);
-    const [linkHover4, setLinkHover4] = useState(false);
-    const [linkHover5, setLinkHover5] = useState(false);
-    const [linkHover6, setLinkHover6] = useState(false);
+    const [linkHover1, setLinkHover1] = useState(false);        // Saber se foi passado em cima dos links no headerTop
+    const [linkHover2, setLinkHover2] = useState(false);        // Saber se foi passado em cima dos links no headerTop
+    const [linkHover3, setLinkHover3] = useState(false);        // Saber se foi passado em cima dos links no headerTop
+    const [linkHover4, setLinkHover4] = useState(false);        // Saber se foi passado em cima dos links no headerTop
+    const [linkHover5, setLinkHover5] = useState(false);        // Saber se foi passado em cima dos links no headerTop
+    const [linkHover6, setLinkHover6] = useState(false);        // Saber se foi passado em cima dos links no headerTop
+
+    const [searchInput, setSearchInput] = useState(false);      // Mostrar ou esconder input do search no mobile
+    const [searchInputValue, setSearchInputValue] = useState('');       // Value do input search mobile
 
     const classes = useStyles();                                         // 14 - Usando classes do Material-ui
     const theme = useTheme();                                            // 15 - Usando themes do Material-ui
@@ -161,11 +171,15 @@ export default () => {
         setOpen(false);
     };
 
+    const handleSearch = (s) => {               // Alterar valor do input com o que for digitado
+        setSearchInputValue(s.target.value);
+    }
+
     const isMobile = useMediaQuery({                                     // 18 - Da uma largura para mobile devices
         query: '(max-width: 799px)'
     });
 
-    const isMdDevice = useMediaQuery({
+    const isMdDevice = useMediaQuery({      // Largura Ipad até um Notebook pequeno
         query: '(max-width: 1199px)'
     })
 
@@ -250,6 +264,8 @@ export default () => {
     return (
         <Container>
 
+            {/*MenuMobile - Start*/}
+
             <Drawer
                 className={classes.drawer}
                 variant="persistent"
@@ -302,7 +318,6 @@ export default () => {
                 </div>
 
 
-
                 <div className={classes.drawerTitle}>
                     <span className={classes.drawerText}>Elements</span>
                 </div>
@@ -344,12 +359,19 @@ export default () => {
                 </div>
             </Drawer>
 
+            {/*MenuMobile - Finish*/}
+
+            {/*ButtonToTop* - Start/}
+
             <ToTopBtn opacity={toTopBtn ? '1' : '0'} onClick={scrollToTop} display={toTopBtn ? 'flex' : 'none'}
                       background={defaultColor}>
                 <IoIosArrowUp fill={"#fff"} size={25}/>
             </ToTopBtn>
 
+            {/*ButtonToTop* - Finish*/}
+
             <Header onMouseOver={() => setArrowVisible('1')} onMouseOut={() => setArrowVisible('0')}>
+
                 <HeaderImg background={headerImg ? Pic1 : Pic2}></HeaderImg>
                 <CarouselArrowLeft onMouseOver={() => setOverLeft(true)} onMouseOut={() => setOverLeft(false)}
                                    bgHover={defaultColor} opacity={arrowVisible}
@@ -373,18 +395,33 @@ export default () => {
                     <IoIosArrowForward fill={overRight ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowRight>
 
+                {/*Search Button and Menu Mobile - Start */}
 
                 <MenuDivMobile>
-                    <MenuBtnMobile onClick={handleDrawerOpen}>
-                        <AiOutlineMenu fill={"#fff"} size={20}/>
-                        <MenuTextMobile>Menu</MenuTextMobile>
-                    </MenuBtnMobile>
+                    <MenuDivMobileRow>
+                        <MenuBtnMobile onClick={handleDrawerOpen}>
+                            <AiOutlineMenu fill={"#fff"} size={20}/>
+                            <MenuTextMobile>Menu</MenuTextMobile>
+                        </MenuBtnMobile>
 
-                    <SearchBtnMobile>
-                        <AiOutlineSearch fill={"#fff"} size={30}/>
-                    </SearchBtnMobile>
+                        <SearchBtnMobile onClick={() => setSearchInput(!searchInput)}>
+                            {searchInput ?
+                                <AiOutlineClose fill={"#fff"} size={30}/>
+                                :
+                                <AiOutlineSearch fill={"#fff"} size={30}/>
+                            }
+                        </SearchBtnMobile>
+                    </MenuDivMobileRow>
+
+
+                    <InputSearch display={searchInput ? 'flex' : 'none'} placeholder={"to search type and hit enter"}
+                                 onChange={handleSearch} value={searchInputValue} type={"text"}/>
                 </MenuDivMobile>
 
+                {/*Search Button and Menu Mobile - Finish */}
+
+
+                {/*HeaderTop - Start*/}
 
                 <HeaderTop height={headerShow ? '66px' : '77px'}
                            background={headerShow ? '#282828' : 'rgba(0, 0, 0, 0.3)'}
@@ -398,7 +435,8 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover1(true)} onMouseOut={() => setLinkHover1(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>home</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} display={linkHover1 ? 'flex' : 'none'}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'}
+                                                   display={linkHover1 ? 'flex' : 'none'}>
                                 <HoverHeaderText background={defaultColor}>Main Demo</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Agency Demo</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Classic Demo</HoverHeaderText>
@@ -412,7 +450,9 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover2(true)} onMouseOut={() => setLinkHover2(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1150px"} left={isMdDevice ? '200px' : "550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1150px"}
+                                                   left={isMdDevice ? '200px' : "550px"}
+                                                   display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Portfolio Style 1</HoverHeaderText>
@@ -441,7 +481,8 @@ export default () => {
                                     <HoverHeaderText background={defaultColor}>Creative Style 2</HoverHeaderText>
                                     <HoverHeaderText background={defaultColor}>Classic - Content Right</HoverHeaderText>
                                     <HoverHeaderText background={defaultColor}>Classic - Content Left</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Classic - Content Bottom</HoverHeaderText>
+                                    <HoverHeaderText background={defaultColor}>Classic - Content
+                                        Bottom</HoverHeaderText>
                                 </HoverHeaderColumn>
 
 
@@ -450,7 +491,9 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover3(true)} onMouseOut={() => setLinkHover3(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1350px"} left={isMdDevice ? '350px' : '670px'}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1350px"}
+                                                   left={isMdDevice ? '350px' : '670px'}
+                                                   display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Pages</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>About Us</HoverHeaderText>
@@ -476,32 +519,39 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover4(true)} onMouseOut={() => setLinkHover4(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Elements</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1350px"} left={isMdDevice ? '350px' : '670px'}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1350px"}
+                                                   left={isMdDevice ? '350px' : '670px'}
+                                                   display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <FiLayers fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Accordions</HoverHeaderText>
+                                        <FiLayers fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Accordions</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <FiSend fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Buttons</HoverHeaderText>
+                                        <FiSend fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Buttons</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <GoFileDirectory fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Tabs</HoverHeaderText>
+                                        <GoFileDirectory fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Tabs</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <BsLightning fill={"#999"} siz={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Pricing Tables</HoverHeaderText>
+                                        <BsLightning fill={"#999"} siz={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Pricing
+                                            Tables</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <AiFillPushpin fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Alerts</HoverHeaderText>
+                                        <AiFillPushpin fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Alerts</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                 </HoverHeaderColumn>
@@ -511,28 +561,33 @@ export default () => {
                                 <HoverHeaderColumn>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <FiMenu fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>List</HoverHeaderText>
+                                        <FiMenu fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>List</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <FaMedal fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Icon Box</HoverHeaderText>
+                                        <FaMedal fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Icon
+                                            Box</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <GoBook fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Typography</HoverHeaderText>
+                                        <GoBook fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Typography</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <RiBarChartFill fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Progress Bars</HoverHeaderText>
+                                        <RiBarChartFill fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Progress
+                                            Bars</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
-                                     <HoverHeaderRowIcon background={defaultColor}>
-                                         <FaRegImage fill={"#999"} size={20} />
-                                         <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Carousel Slider</HoverHeaderText>
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <FaRegImage fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Carousel
+                                            Slider</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                 </HoverHeaderColumn>
@@ -542,28 +597,33 @@ export default () => {
                                 <HoverHeaderColumn>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <FiBell fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Call To Action</HoverHeaderText>
+                                        <FiBell fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Call To
+                                            Action</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <RiBarChartFill fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Counters</HoverHeaderText>
+                                        <RiBarChartFill fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Counters</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <TiMessages fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Testimonials</HoverHeaderText>
+                                        <TiMessages fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Testimonials</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <BiShareAlt fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Social Icons</HoverHeaderText>
+                                        <BiShareAlt fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Social
+                                            Icons</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                     <HoverHeaderRowIcon background={defaultColor}>
-                                        <RiVipDiamondFill fill={"#999"} size={20} />
-                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Icons</HoverHeaderText>
+                                        <RiVipDiamondFill fill={"#999"} size={20}/>
+                                        <HoverHeaderText style={{paddingLeft: 10}}
+                                                         background={defaultColor}>Icons</HoverHeaderText>
                                     </HoverHeaderRowIcon>
 
                                 </HoverHeaderColumn>
@@ -574,7 +634,8 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover5(true)} onMouseOut={() => setLinkHover5(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>shop</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} display={linkHover5 ? 'flex' : 'none'}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'}
+                                                   display={linkHover5 ? 'flex' : 'none'}>
                                 <HoverHeaderText background={defaultColor}>Shop Right Sidebar</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Shop Left Sidebar</HoverHeaderText>
                                 <HoverHeaderText background={defaultColor}>Shop Full-Width</HoverHeaderText>
@@ -586,7 +647,9 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover6(true)} onMouseOut={() => setLinkHover6(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1650px"} left={isMdDevice ? '550px' : '870px'}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1650px"}
+                                                   left={isMdDevice ? '550px' : '870px'}
+                                                   display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Three Columns</HoverHeaderText>
@@ -605,7 +668,8 @@ export default () => {
                                     <HoverHeaderText background={defaultColor}>Three Columns</HoverHeaderText>
                                     <HoverHeaderText background={defaultColor}>Four Columns</HoverHeaderText>
                                     <HoverHeaderText background={defaultColor}>With Sidebar</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Single Blog Post</HoverHeaderText>                                </HoverHeaderColumn>
+                                    <HoverHeaderText background={defaultColor}>Single Blog Post</HoverHeaderText>
+                                </HoverHeaderColumn>
 
                             </HoverHeaderLinkHidden>
                         </HeaderLinkDiv>
@@ -628,6 +692,11 @@ export default () => {
                 </HeaderTop>
 
                 <TopDivHidden display={headerShow ? 'flex' : 'none'}></TopDivHidden>
+
+                {/*HeaderTop - Start*/}
+
+
+                {/*HeaderBottom - Start*/}
 
                 <HeaderBottom pLeftMobile={headerImg ? '25px' : '0'} pLeftNote={headerImg ? '200px' : '0'}
                               pLeft={headerImg ? '300px' : '0'}
@@ -697,6 +766,9 @@ export default () => {
                     </HeaderBottomChild>
 
                 </HeaderBottom>
+
+                {/*HeaderBototm - Finish*/}
+
             </Header>
             <WhatWeDoComponent defaultColor={defaultColor}/>
 
