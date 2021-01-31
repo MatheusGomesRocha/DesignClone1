@@ -298,6 +298,10 @@ export const HoverHeaderLinkHidden = styled.div`
         from {opacity: 0;}
         to {opacity: 1;}
     }
+    
+    @media(min-width: 2000px) {
+        left: ${props=>props.leftBig};
+    }
 `;
 export const HoverHeaderText = styled.a`
     font-size: 18px;
@@ -305,7 +309,7 @@ export const HoverHeaderText = styled.a`
     padding: 13px 30px 13px 20px;
     color: #999;
     transition: 0.5s;
-    
+         
     :hover {
         color: #fff;
         background-color: ${props=>props.background};
@@ -320,6 +324,12 @@ export const HoverHeaderRowIcon = styled.div`
     display: flex;
     align-items: center;
     padding-left: 20px;
+    color: #999;
+    transition: 250ms;
+
+    :hover {
+        background-color: ${props=>props.background};
+    }
 `;
 export const HoverHeaderTitle = styled.span`
     color: #fff;

@@ -31,7 +31,7 @@ export const CenterDiv = styled.div`
     }
     
     @keyframes fadeFromRight {
-        from {opacity: 0; transform: translateX(80%);}
+        from {opacity: 0; transform: translateX(40%);}
         to {opacity: 1;}
     }
 `;

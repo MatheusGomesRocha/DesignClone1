@@ -1,14 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {FaCog} from 'react-icons/fa';
-import {AiOutlineMenu, AiOutlineSearch, AiOutlineClose, AiFillPushpin} from 'react-icons/ai';
+import {AiOutlineMenu, AiOutlineSearch, AiOutlineClose} from 'react-icons/ai';   // Menu Mobile Open, Button Search, Menu Mobile Close
 import {IoIosArrowBack, IoIosArrowForward, IoIosArrowUp} from 'react-icons/io';
-import {BiCart, BiShareAlt} from 'react-icons/bi';
-import {FiSend, FiMenu, FiBell, FiLayers} from 'react-icons/fi';
-import {GoFileDirectory, GoBook} from 'react-icons/go';
-import {BsLightning} from 'react-icons/bs';
-import {FaMedal, FaRegImage} from 'react-icons/fa';
-import {GrBarChart, GrDiamond} from 'react-icons/gr';
-import {TiMessages} from 'react-icons/ti';
+
+// Submenu ELEMENTS - START
+
+import {AiFillPushpin} from 'react-icons/ai';   // Alert
+import {BiCart, BiShareAlt} from 'react-icons/bi';  // Cart Header, Social Icons
+import {FiSend, FiMenu, FiBell, FiLayers} from 'react-icons/fi';    // Buttons, Lists, Call To Action, Accordions
+import {GoFileDirectory, GoBook} from 'react-icons/go';     // Tabs, Typography
+import {BsLightning} from 'react-icons/bs';     // Princing Tables
+import {FaMedal, FaRegImage} from 'react-icons/fa';     // Icon Box, Carousel Slider
+import {TiMessages} from 'react-icons/ti';              // Testimonials
+import {RiBarChartFill, RiVipDiamondFill} from 'react-icons/ri';    // Counters, Icons
+
+// Submenu ELEMENTS - FINISH
+
 import Pic1 from './img/pic1.jpg';
 import Pic2 from './img/pic2.jpg';
 import WhatWeDoComponent from "./components/WhatWeDoComponent";
@@ -24,10 +31,7 @@ import {
 
 import {useMediaQuery} from "react-responsive";
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import {
@@ -208,6 +212,12 @@ export default () => {
             setHeaderImg(!headerImg);
         }, [7000])
     }, [headerImg]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            alert('Este Website é apenas uma cópia da SPHENE, feita com a intenção de obter experiência e aprendizado em novos desafios')
+        }, 2000)
+    }, [])
 
     const handleScroll = () => {        // Verifica se o scroll é maior que 80 e mostra o Header fixado
         if (document.documentElement.scrollTop > 80) {
@@ -402,7 +412,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover2(true)} onMouseOut={() => setLinkHover2(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>PORTFOLIO</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '200px' : "550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1150px"} left={isMdDevice ? '200px' : "550px"}  display={linkHover2 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Portfolio Style 1</HoverHeaderText>
@@ -440,7 +450,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover3(true)} onMouseOut={() => setLinkHover3(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Pages</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '350px' : '670px'}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1350px"} left={isMdDevice ? '350px' : '670px'}  display={linkHover3 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Pages</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>About Us</HoverHeaderText>
@@ -466,39 +476,96 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover4(true)} onMouseOut={() => setLinkHover4(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>Elements</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '350px' : '670px'}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1350px"} left={isMdDevice ? '350px' : '670px'}  display={linkHover4 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
-                                    <HoverHeaderRowIcon>
-                                        <FiLayers fill={"#999"} size={22} />
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <FiLayers fill={"#999"} size={20} />
                                         <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Accordions</HoverHeaderText>
                                     </HoverHeaderRowIcon>
-                                    <HoverHeaderRowIcon>
-                                        <FiSend fill={"#999"} size={22} />
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <FiSend fill={"#999"} size={20} />
                                         <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Buttons</HoverHeaderText>
                                     </HoverHeaderRowIcon>
-                                    <HoverHeaderText background={defaultColor}>Tabs</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Pricing Tables</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Alerts</HoverHeaderText>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <GoFileDirectory fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Tabs</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <BsLightning fill={"#999"} siz={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Pricing Tables</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <AiFillPushpin fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Alerts</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
                                 </HoverHeaderColumn>
 
                                 <HoverLineDiv></HoverLineDiv>
 
                                 <HoverHeaderColumn>
-                                    <HoverHeaderText background={defaultColor}>Lists</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Icon Box</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Typography</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Progress Bars</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Carousel Slider</HoverHeaderText>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <FiMenu fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>List</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <FaMedal fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Icon Box</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <GoBook fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Typography</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <RiBarChartFill fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Progress Bars</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                     <HoverHeaderRowIcon background={defaultColor}>
+                                         <FaRegImage fill={"#999"} size={20} />
+                                         <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Carousel Slider</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
                                 </HoverHeaderColumn>
 
                                 <HoverLineDiv></HoverLineDiv>
 
                                 <HoverHeaderColumn>
-                                    <HoverHeaderText background={defaultColor}>Call To Action</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Counters</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Testimonials</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Social Icons</HoverHeaderText>
-                                    <HoverHeaderText background={defaultColor}>Icons</HoverHeaderText>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <FiBell fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Call To Action</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <RiBarChartFill fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Counters</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <TiMessages fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Testimonials</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <BiShareAlt fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Social Icons</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
+                                    <HoverHeaderRowIcon background={defaultColor}>
+                                        <RiVipDiamondFill fill={"#999"} size={20} />
+                                        <HoverHeaderText style={{paddingLeft: 10}} background={defaultColor}>Icons</HoverHeaderText>
+                                    </HoverHeaderRowIcon>
+
                                 </HoverHeaderColumn>
 
 
@@ -519,7 +586,7 @@ export default () => {
 
                         <HeaderLinkDiv onMouseOver={() => setLinkHover6(true)} onMouseOut={() => setLinkHover6(false)}>
                             <HeaderLink color={defaultColor} font={"13px"} href={"#"}>blog</HeaderLink>
-                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} left={isMdDevice ? '550px' : '870px'}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
+                            <HoverHeaderLinkHidden top={headerShow ? '66px' : '77px'} leftBig={"1650px"} left={isMdDevice ? '550px' : '870px'}  display={linkHover6 ? 'flex' : 'none'} flex={"row"}>
                                 <HoverHeaderColumn>
                                     <HoverHeaderTitle>Full-width</HoverHeaderTitle>
                                     <HoverHeaderText background={defaultColor}>Three Columns</HoverHeaderText>
