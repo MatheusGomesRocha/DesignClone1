@@ -276,7 +276,7 @@ export default () => {
                 }}
             >
                 <div onClick={handleDrawerClose} className={classes.drawerHeader}>
-                    <span className={classes.drawerLogoText}>Sphene</span>
+                    <a href={"http://vasterad.com/themes/sphene/index.html"} className={classes.drawerLogoText}>Sphene</a>
                     <IconButton>
                         <AiOutlineClose fill={"#fff"} size={20}/>
                     </IconButton>
@@ -321,13 +321,81 @@ export default () => {
                 <div className={classes.drawerTitle}>
                     <span className={classes.drawerText}>Elements</span>
                 </div>
-                <div>
-                    {['Accordions', 'Buttons', 'Tabs', 'Pricing Tables', 'Alerts', 'Lists', 'Icon Boxes', 'Typography', 'Progress Bars', 'Carousel Slider', 'Call To Action', 'Counters', 'Testimonials', 'Social Icons', 'Icons'].map((text, index) => (
-                        <div style={{borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button key={text}>
-                            <ListItemText primary={text}/>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <FiLayers fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Accordions</ListItemText>
                         </div>
-                    ))}
-                </div>
+
+                         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <FiSend fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Buttons</ListItemText>
+                        </div>
+
+                         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <GoFileDirectory fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Tabs</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <BsLightning fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Pricing Tables</ListItemText>
+                        </div>
+
+                         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <AiFillPushpin fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Alerts</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <FiMenu fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Lists</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <FaMedal fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Icon Boxes</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <GoBook fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Typography</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <RiBarChartFill fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Progress Bars</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <FaRegImage fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Carousel Slider</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <FiBell fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Call To Action</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <RiBarChartFill fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Counters</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <TiMessages fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Testimonials</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <BiShareAlt fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Social Icons</ListItemText>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',borderTop: '1px solid #777', padding: '10px 0 10px 30px'}} button>
+                            <RiVipDiamondFill fill={"#999"} size={20} />
+                            <ListItemText style={{marginLeft: 15}}>Icons</ListItemText>
+                        </div>
 
 
                 <div className={classes.drawerTitle}>
@@ -395,7 +463,7 @@ export default () => {
                     <IoIosArrowForward fill={overRight ? '#fff' : '#000'} size={30}/>
                 </CarouselArrowRight>
 
-                {/*Search Button and Menu Mobile - Start */}
+                {/*Search Button and Menu Button Open Mobile - Start */}
 
                 <MenuDivMobile>
                     <MenuDivMobileRow>
@@ -418,7 +486,7 @@ export default () => {
                                  onChange={handleSearch} value={searchInputValue} type={"text"}/>
                 </MenuDivMobile>
 
-                {/*Search Button and Menu Mobile - Finish */}
+                {/*Search Button and Menu Button Open Mobile - Finish */}
 
 
                 {/*HeaderTop - Start*/}
@@ -428,7 +496,7 @@ export default () => {
                            position={headerShow ? 'fixed' : 'relative'}>
 
                     <HeaderTopLeft>
-                        <HeaderLink borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
+                        <HeaderLink href={"http://vasterad.com/themes/sphene/index.html"} borderColor={"transparent"} href={"#"} font={"25px"}>sphene</HeaderLink>
                     </HeaderTopLeft>
 
                     <HeaderTopRight>

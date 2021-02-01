@@ -9,7 +9,7 @@ export const MainDiv = styled.div`
 
      @media(min-width: 300px) and (max-width: 799px) {
         flex-direction: column;
-        padding: 40px 50px;
+        padding: 30px;
         margin-bottom: 50px;
      }
     

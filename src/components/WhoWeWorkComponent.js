@@ -6,7 +6,6 @@ import {
     SideDiv,
 
     CenterDiv,
-    CenterDiv1,
     Title,
     Content,
     Name,
@@ -20,25 +19,20 @@ export default () => {
     const [content, setContent] = useState(1);
     const [fillIcon1, setFillIcon1] = useState(false);
     const [fillIcon2, setFillIcon2] = useState(false);
-    const [animationNeg, setAnimationNeg] = useState(false);
 
     const setContentPrev = () => {
         if (content === 1) {
             setContent(3);
-            setAnimationNeg(true);
         } else {
             setContent(content - 1);
-            setAnimationNeg(true);
         }
     }
 
     const setContentNext = () => {
         if (content === 3) {
-            setAnimationNeg(false);
             setContent(1);
         } else {
             setContent(content + 1);
-            setAnimationNeg(false);
         }
     }
 

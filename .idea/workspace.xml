@@ -5,7 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FooterComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FooterComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDoStyled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WhoWeWorkComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhoWeWorkComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +90,8 @@
       <workItem from="1612012912217" duration="28000" />
       <workItem from="1612038506009" duration="1573000" />
       <workItem from="1612102514546" duration="1250000" />
-      <workItem from="1612117604091" duration="6426000" />
+      <workItem from="1612117604091" duration="6483000" />
+      <workItem from="1612179068667" duration="1193000" />
     </task>
     <servers />
   </component>
@@ -191,13 +195,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>617</line>
+          <line>685</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>427</line>
-          <properties lambdaOrdinal="-1" />
+          <line>495</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>

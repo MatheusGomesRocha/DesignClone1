@@ -7,7 +7,10 @@ import {
     Title,
     Text,
     LinkDiv,
-    Link, LinkSide, LinkItem, LineDiv,
+    Link,
+    LinkSide,
+    LinkItem,
+    LineDiv,
 } from './FooterStyled';
 
 import {IoIosArrowForward} from 'react-icons/io';

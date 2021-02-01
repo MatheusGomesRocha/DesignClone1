@@ -4,13 +4,11 @@ import {
     MainDiv,
     ItemDiv,
     IconDiv,
-    Icon,
     ContentDiv,
     Title,
     Content
 } from './WhatWeDoStyled';
 
-import Megaphone from '../img/megaphone.png';
 import {AiOutlineSearch} from 'react-icons/ai';
 import {GoMegaphone} from 'react-icons/go';
 import {AiOutlineLineChart} from 'react-icons/ai';
